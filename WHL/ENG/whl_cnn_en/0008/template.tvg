@@ -1,0 +1,133 @@
+{
+	"template" : "0008",
+	"scale" : "1920,1080",
+	"rate" : 25.0,
+	"values" : {
+		"$throw-left" : "0",
+		"$throw-right" : "0",
+
+	},
+	"fonts" : [	"{path-fonts}TerminalDosis_Medium.ttf",
+			"{path-fonts}TerminalDosis_Bold.ttf"
+			],
+	"layers" : [
+	
+		{
+			"name" : "solid1",
+			"type" : "solid",
+			"position" : "95,127",
+			"size" : "520,35",
+			"color" : "160,160,160",
+		},
+		{
+			"name" : "pic1",
+			"type" : "image",
+			"position" : "95,127",
+			"size" : "520,35",
+			"path" : "{path}image01.png",
+		},
+		{
+			"name" : "text1",
+			"type" : "text",
+			"position" : "98,128",
+			"size" : "70,30",
+			"value" : "$throw-left",
+			"font" : "Terminal Dosis,30,50"
+			"color" : "255,255,255",
+			"scaled" : "1, 0",
+			"align" : "0,0"
+		},
+		{
+			"name" : "text2",
+			"type" : "text",
+			"position" : "528,128",
+			"size" : "70,30",
+			"value" : "$throw-right",
+			"font" : "Terminal Dosis,30,50"
+			"color" : "255,255,255",
+			"align" : "0,0"
+		},
+		{
+			"name" : "text3",
+			"type" : "text",
+			"position" : "200,128",
+			"size" : "290,30",
+			"value" : "SHOTS ON GOAL",
+			"font" : "Terminal Dosis,30,63, 110"
+			"color" : "255,255,255",
+			"align" : "0,0"
+		},
+	],
+
+	"commands" : [
+
+		{
+			"name" : "show",
+			"transition" : [
+				{"fr" : 0, "layer" : "command", "type" : "extcommand", "to" : "1,show:8,show1"},
+				{"fr" : 1, "layer" : "command1", "type" : "signal", "to" : "end-cmd"}
+			],
+		},
+
+		{
+			"name" : "show1",
+			"transition" : [
+
+				{"fr" : 0, "layer" : "pic1", "type" : "visible", "to" : 1},
+				{"fr" : 0, "layer" : "solid1", "type" : "visible", "to" : 1},
+
+				{"fr" : 0, "dur" : 5, "layer" : "solid1", "type" : "move", "curve":2, "from" : "95,92", "to" : "95,127"},
+				{"fr" : 0, "dur" : 5, "layer" : "solid1", "type" : "clip", "curve":2, "from" : "0,35,520,0", "to" : "0,0,520,35"},
+
+				{"fr" : 0, "dur" : 5, "layer" : "pic1", "type" : "move", "curve":2, "from" : "95,92", "to" : "95,127"},
+				{"fr" : 0, "dur" : 5, "layer" : "pic1", "type" : "clip", "curve":2, "from" : "0,35,520,0", "to" : "0,0,520,35"},
+				
+
+				{"fr" : 5, "layer" : "text1", "type" : "visible", "to" : 1},
+				{"fr" : 5, "dur" : 4, "layer" : "text1", "type" : "opacity", "curve" : 0, "from" : "0", "to" : "1"},
+				{"fr" : 5, "dur" : 4, "layer" : "text1", "type" : "move", "curve" : 0, "from" : "98,128", "to" : "106,128"},
+
+				{"fr" : 5, "layer" : "text2", "type" : "visible", "to" : 1},
+				{"fr" : 5, "dur" : 4, "layer" : "text2", "type" : "opacity", "curve" : 0, "from" : "0", "to" : "1"},
+				{"fr" : 5, "dur" : 4, "layer" : "text2", "type" : "move", "curve" : 0, "from" : "528,128", "to" : "536,128"},
+
+				{"fr" : 7, "layer" : "text3", "type" : "visible", "to" : 1},
+				{"fr" : 7, "dur" : 4, "layer" : "text3", "type" : "opacity", "curve" : 0, "from" : "0", "to" : "1"},
+				{"fr" : 7, "dur" : 4, "layer" : "text3", "type" : "move", "curve" : 0, "from" : "200,128", "to" : "208,128"},
+
+				{"fr" : 11, "layer" : "command", "type" : "signal", "to" : "end-show"},
+				{"fr" : 190, "layer" : "command", "type" : "command", "to" : "hide"},
+			],
+		},
+		{
+			"name" : "hide",
+			"transition" : [
+			
+				{"fr" : 2, "dur" : 4, "layer" : "text1", "type" : "opacity", "curve" : 0, "from" : "1", "to" : "0"},
+				{"fr" : 2, "dur" : 4, "layer" : "text1", "type" : "move", "curve" : 0, "from" : "", "to" : "98,128"},
+
+				{"fr" : 2, "dur" : 4, "layer" : "text2", "type" : "opacity", "curve" : 0, "from" : "1", "to" : "0"},
+				{"fr" : 2, "dur" : 4, "layer" : "text2", "type" : "move", "curve" : 0, "from" : "", "to" : "528,128"},
+
+				{"fr" : 0, "dur" : 4, "layer" : "text3", "type" : "opacity", "curve" : 0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 4, "layer" : "text3", "type" : "move", "curve" : 0, "from" : "", "to" : "200,128"},
+
+				{"fr" : 5, "dur" : 5, "layer" : "solid1", "type" : "move", "curve":2, "from" : "", "to" : "95,92"},
+				{"fr" : 5, "dur" : 5, "layer" : "solid1", "type" : "clip", "curve":2, "from" : "", "to" : "0,35,520,0"},
+				{"fr" : 5, "dur" : 5, "layer" : "pic1", "type" : "move", "curve":2, "from" : "", "to" : "95,92"},
+				{"fr" : 5, "dur" : 5, "layer" : "pic1", "type" : "clip", "curve":2, "from" : "", "to" : "0,35,520,0"},
+				
+				
+				{"fr" : 10, "layer" : "pic1", "type" : "visible", "to" : 0},
+				{"fr" : 10, "layer" : "solid1", "type" : "visible", "to" : 0},
+				{"fr" : 10, "layer" : "text1", "type" : "visible", "to" : 0},
+				{"fr" : 10, "layer" : "text2", "type" : "visible", "to" : 0},
+				{"fr" : 10, "layer" : "text3", "type" : "visible", "to" : 0},
+
+
+				{"fr" : 10, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+			]
+		}
+	]
+
+} 

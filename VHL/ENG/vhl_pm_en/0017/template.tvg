@@ -1,0 +1,191 @@
+﻿{
+	"template" : "0017",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"isolate": 1,
+	"values" : {
+		"$score-left" : "0",
+		"$team-l-name2" : "",
+
+	},
+	"script": "function swapTemplate()
+		{
+			template.orderTemplate('0017', '0001');
+		}",
+
+	"fonts" : [
+		"{path-fonts}Parimatch-Medium.ttf",
+		"{path-fonts}Parimatch-Regular.ttf",
+ 		],
+
+	"layers" : [
+		{
+			"name" : "main_l",
+			"type" : "svg",
+			"position" : "168,55",
+			"size" : "162,63",
+			"path" : "{path}main.svg",
+		},
+		{
+			"name" : "name_team_l",
+			"type" : "text",
+			"position" : "190,58",
+			"size" : "80,57",
+			"value" : "$team-l-name2",
+			"color" : "#000000",
+			"align" : "1,0",
+			"font" : "Pari-Match ,51"
+		},
+		{
+			"name" : "score_l",
+			"type" : "text",
+			"position" : "265,58",
+			"size" : "47,57",
+			"value" : "$score-left",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match, 51"
+		},
+		{
+			"name" : "curtain_yellow_l",
+			"type" : "svg",
+			"position" : "33,55",
+			"size" : "162,63",
+			"path" : "{path}yellowbkg.svg",
+		},
+		{
+			"name" : "curtain_white_l",
+			"type" : "svg",
+			"position" : "33,55",
+			"size" : "162,63",
+			"path" : "{path}whitebkg.svg",
+		},
+		{
+			"name" : "mask_left_l",
+			"type" : "mask",
+			"position" : "24,56",
+			"size" : "164,63",
+			"composition" : 8,
+			"path" : "{path}mask.svg",
+		},
+		{
+			"name" : "mask_right_l",
+			"type" : "mask",
+			"position" : "308,56",
+			"size" : "164,63",
+			"composition" : 8,
+			"path" : "{path}mask.svg",
+		},
+		{
+			"name" : "main_info",
+			"type" : "svg",
+			"position" : "116,179",
+			"size" : "216,20",
+			"path" : "{path}maininfo.svg",
+		},
+		{
+			"name" : "text_info",
+			"type" : "text",
+			"position" : "122,179",
+			"size" : "210,20",
+			"value" : "EMPTY NET",
+			"color" : "#000000",
+			"align" : "1,0",
+			"font" : "Pari-Match Medium, 22"
+		},
+		{
+			"name" : "mask_info",
+			"type" : "mask",
+			"position" : "116,179",
+			"size" : "216,20",
+			"path" : "{path}maskinfo.svg",
+		},
+	],
+
+	"commands" : [
+		{
+			"name" : "show",
+			"transition" : [
+				{"fr" : 0, "layer" : "command", "type" : "extcommand", "to" : "1,show:17,show1"},
+				{"fr" : 1, "layer" : "command", "type" : "signal", "to" : "end-cmd"}
+			]
+		},
+		{
+
+			"name" : "show1",
+			"transition" : [
+
+			{"fr" : 0, "layer" : "command", "type" : "script", "to" : "swapTemplate()"},
+
+			{"fr" : 0, "layer" : "mask_left_l", "type" : "visible", "to" : 1},	
+			{"fr" : 0, "layer" : "mask_right_l", "type" : "visible", "to" : 1},	
+
+			{"fr" : 0, "layer" : "curtain_yellow_l", "type" : "visible", "to" : 1},	
+			{"fr" : 0, "dur" : 40, "layer" : "curtain_yellow_l", "type" : "move", "curve":2, "from" : "33,55", "to" : "310,55"},
+
+			{"fr" : 5, "layer" : "curtain_white_l", "type" : "visible", "to" : 1},	
+			{"fr" : 5, "dur" : 40, "layer" : "curtain_white_l", "type" : "move", "curve":2, "from" : "33,55", "to" : "310,55"},
+
+			{"fr" : 12, "layer" : "main_l", "type" : "visible", "to" : 1},
+			{"fr" : 14, "layer" : "name_team_l", "type" : "visible", "to" : 1},	
+			{"fr" : 14, "layer" : "score_l", "type" : "visible", "to" : 1},	
+			{"fr" : 14, "dur" :25, "layer" : "name_team_l", "type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+			{"fr" : 14, "dur" :25, "layer" : "score_l", "type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+
+			{"fr" : 16, "layer" : "mask_info", "type" : "visible", "to" : 1},	
+			{"fr" : 16, "layer" : "main_info", "type" : "visible", "to" : 1},	
+			{"fr" : 22, "layer" : "text_info", "type" : "visible", "to" : 1},	
+
+
+			{"fr" : 16, "dur" : 24, "layer" : "mask_info", "type" : "move", "curve":2, "from" : "116,179", "to" : "332,179"},
+			{"fr" : 22, "dur" : 18, "layer" : "text_info", "type" : "move", "curve":2, "from" : "140,179", "to" : "122,179"},
+			{"fr" : 22, "dur" : 18, "layer" : "text_info", "type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+
+			{"fr" : 40, "layer" : "mask_info", "type" : "visible", "to" : 0},	
+			{"fr" : 40, "layer" : "curtain_white_l", "type" : "visible", "to" : 0},	
+			{"fr" : 40, "layer" : "curtain_yellow_l", "type" : "visible", "to" : 0},	
+			{"fr" : 40, "layer" : "mask_left_l", "type" : "visible", "to" : 0},	
+			{"fr" : 40, "layer" : "mask_right_l", "type" : "visible", "to" : 0},	
+		
+			{"fr" : 40, "layer" : "command", "type" : "signal", "to" : "end-show"}
+
+			]
+		},
+		{
+			"name" : "hide",
+			"transition" : [
+
+			{"fr" : 0, "layer" : "mask_left_l", "type" : "visible", "to" : 1},	
+			{"fr" : 0, "layer" : "mask_right_l", "type" : "visible", "to" : 1},	
+
+			{"fr" : 0, "layer" : "curtain_yellow_l", "type" : "visible", "to" : 1},	
+			{"fr" : 4, "layer" : "curtain_white_l", "type" : "visible", "to" : 1},	
+			{"fr" : 0, "dur" : 40, "layer" : "curtain_yellow_l", "type" : "move", "curve":2, "from" : "310,55", "to" : "33,55"},
+			{"fr" : 4, "dur" : 40, "layer" : "curtain_white_l", "type" : "move", "curve":2, "from" : "310,55", "to" : "33,55"},
+
+			{"fr" : 0, "dur" : 16, "layer" : "text_info", "type" : "opacity", "curve":0, "from" : "", "to" : "0"},
+
+			{"fr" : 9, "layer" : "mask_info", "type" : "visible", "to" : 1},	
+			{"fr" : 9, "dur" : 25, "layer" : "mask_info", "type" : "move", "curve":2, "from" : "332,179", "to" : "116,179"},
+
+			{"fr" : 13, "layer" : "main_l", "type" : "visible", "to" : 0},	
+			{"fr" : 13, "layer" : "score_l", "type" : "visible", "to" : 0},	
+			{"fr" : 13, "layer" : "name_team_l", "type" : "visible", "to" : 0},	
+
+			{"fr" : 44, "layer" : "text_info", "type" : "visible", "to" : 0},	
+
+			{"fr" : 44, "layer" : "mask_left_l", "type" : "visible", "to" : 0},	
+			{"fr" : 44, "layer" : "mask_right_l", "type" : "visible", "to" : 0},
+			{"fr" : 44, "layer" : "curtain_yellow_l", "type" : "visible", "to" : 0},	
+			{"fr" : 44, "layer" : "curtain_white_l", "type" : "visible", "to" : 0},	
+			{"fr" : 44, "layer" : "mask_info", "type" : "visible", "to" : 0},	
+			{"fr" : 44, "layer" : "main_info", "type" : "visible", "to" : 0},
+
+			{"fr" : 44, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+
+			]
+		},
+	]
+} 
+				
+

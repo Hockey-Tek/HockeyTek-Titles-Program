@@ -1,0 +1,400 @@
+﻿{
+	"template" : "0002",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"isolate": 0,
+
+	"values" : {
+		"$match-status" : "",
+		"$match-time" : "00:00",
+		"$league-logo" : "",
+		"$score-right" : "",
+		"$score-left" : "",
+		"$team-r-logo" : "",
+		"$team-l-logo" : "",
+		"$team-l-name1" : "",
+		"$team-r-name1" : "",
+		"$team-r-city" : "",
+		"$team-l-city" : "",
+	},
+
+	"script": "function updateInfo()
+				{
+					match_status.value = translate(template.values('$match-status'))
+					match_status.update = 1;
+				}
+				function translate(status)
+				{
+					var out = status;
+
+						if(status == 'Final')
+						out = '<tr><td style=\"color:white;\">FINAL</td>';
+
+					else if(status == 'Final-SO')
+						out = '<span style=\"color:white;\">FINAL/</span><span style=\"color:#F8FF13;\">SO</span>';
+
+					else if(status == 'Final-OT')
+						out = '<span style=\"color:white;\">FINAL/</span><span style=\"color:#F8FF13;\">OT</span>';
+
+					else if(status == 'End of 1st')
+						out = '<tr style=\"color:white;\"><td>END OF 1</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">ST</td><td>PERIOD</td></tr>';
+
+					else if(status == 'End of 2nd')
+						out = '<tr style=\"color:white;\"><td>END OF 2</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">ND</td><td>PERIOD</td></tr>';
+
+					else if(status == 'End of 3rd')
+						out = '<tr style=\"color:white;\"><td>END OF 3</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">RD</td><td>PERIOD</td></tr>';
+
+					else if(status == 'End of OT')
+						out = '<span style=\"color:white;\">END/</span><span style=\"color:#F8FF13;\">OT</span>';
+
+					else if(status == 'End of SO')
+						out = '<span style=\"color:white;\">END/</span><span style=\"color:#F8FF13;\">SO</span>';
+
+					else if(status == 'Start of 1st')
+						out = '<tr style=\"color:white;\"><td>START OF 1</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">ST</td><td>PERIOD</td></tr>';
+
+					else if(status == 'Start of 2nd')
+						out = '<tr style=\"color:white;\"><td>START OF 2</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">ND</td><td>PERIOD</td></tr>';
+
+					else if(status == 'Start of 3rd')
+						out = '<tr style=\"color:white;\"><td>START OF 3</td><td style=\"font-size:20px; color:#F8FF13; padding-top:3px;\">RD</td><td>PERIOD</td></tr>';
+
+					else if(status == 'Start of SHOOTOUT')
+						out = '<span style=\"color:white;\">START OF/</span><span style=\"color:#F8FF13;\">SHOOTOUT</span>';
+
+
+					return out;
+				}",
+
+	"fonts" : [
+		"{path-fonts}Parimatch-Bold.ttf",
+		"{path-fonts}Parimatch-Regular.ttf",
+		"{path-fonts}Parimatch-Regular-Plus.ttf",
+ 		],
+	"layers" : [
+		{
+			"name" : "league_bkg",
+			"type" : "svg",
+			"position" : "118,853",
+			"size" : "200, 135",
+			"path" : "{path}leaguebkg.svg",
+		},
+		{
+			"name" : "league_logo",
+			"type" : "image",
+			"position" : "162,866",
+			"size" : "110,110",
+			"aspect" : 1,
+			"color" : "#ffffff",
+			"path" : "$league-logo",
+		},
+		{
+			"name" : "main_bkg",
+			"type" : "svg",
+			"position" : "275,850",
+			"size" : "1382, 141",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "score_l",
+			"type" : "text",
+			"position" : "858,878",
+			"size" : "80,86",
+			"value" : "$score-left",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match Bold, 84"
+		},
+		{
+			"name" : "score_r",
+			"type" : "text",
+			"position" : "970,878",
+			"size" : "80,86",
+			"value" : "$score-right",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match Bold, 84"
+		},
+		{
+			"name" : "logo_team_l",
+			"type" : "image",
+			"position" : "320,871",
+			"size" : "100,100",
+			"aspect" : 1,
+			"path" : "$team-l-logo",
+		},
+		{
+			"name" : "logo_team_r",
+			"type" : "image",
+			"position" : "1078,871",
+			"size" : "100,100",
+			"aspect" : 1,
+			"path" : "$team-r-logo",
+		},
+		{
+			"name" : "team_name_l",
+			"type" : "text",
+			"position" : "433,870",
+			"size" : "390,51",
+			"value" : "$team-l-name1",
+			"align" : "0,0",
+			"color" : "#F8FF13",
+			"case" : 1,
+			"font" : "Pari-Match Bold, 50"
+		},
+		{
+			"name" : "team_city_l",
+			"type" : "text",
+			"position" : "433,926",
+			"size" : "390,44",
+			"value" : "$team-l-city",
+			"align" : "0,0",
+			"color" : "#ffffff",
+			"case" : 1,
+			"font" : "Pari-Match, 40"
+		},
+		{
+			"name" : "team_name_r",
+			"type" : "text",
+			"position" : "1208,870",
+			"size" : "390,51",
+			"value" : "$team-r-name1",
+			"align" : "0,0",
+			"color" : "#F8FF13",
+			"case" : 1,
+			"font" : "Pari-Match Bold, 50"
+		},
+		{
+			"name" : "team_city_r",
+			"type" : "text",
+			"position" : "1208,926",
+			"size" : "390,44",
+			"value" : "$team-r-city",
+			"align" : "0,0",
+			"color" : "#ffffff",
+			"case" : 1,
+			"font" : "Pari-Match, 40"
+		},
+		{
+			"name" : "curtain_white",
+			"type" : "svg",
+			"position" : "275,850",
+			"size" : "1382, 141",
+			"path" : "{path}whitebkg.svg",
+		},
+		{
+			"name" : "curtain_yellow",
+			"type" : "svg",
+			"position" : "275,850",
+			"size" : "1382, 141",
+			"path" : "{path}yellowbkg.svg",
+		},
+		{
+			"name" : "curtain_gray",
+			"type" : "svg",
+			"position" : "275,850",
+			"size" : "1382, 141",
+			"path" : "{path}graybkg.svg",
+		},
+		{
+			"name" : "info_bkg_top",
+			"type" : "svg",
+			"position" : "837,815",
+			"size" : "280,35",
+			"path" : "{path}infobkgt.svg",
+		},
+		{
+			"name" : "info_bkg_bottom",
+			"type" : "svg",
+			"position" : "821,991",
+			"size" : "217,35",
+			"path" : "{path}infobkgb.svg",
+		},
+		{
+			"name" : "match_status",
+			"type" : "richtext",
+			"position" : "847,815",
+			"size" : "260,30",
+			"value" : "",
+			"align" : "0,0",
+			"font" : "Pari-Match Bold, 30"
+		},
+		{
+			"name" : "match_time",
+			"type" : "richtext",
+			"position" : "841,993",
+			"size" : "180,30",
+			"value" : "$match-time",
+			"align" : "0,0",
+			"color" : "#ffffff",
+			"font" : "Parimatch-Regular-Plus, 30"
+		},
+		{
+			"name" : "mask_info_top",
+			"type" : "mask",
+			"position" : "836,815",
+			"size" : "282,35",
+			"path" : "{path}infobkgt.svg",
+		},
+		{
+			"name" : "mask_info_bottom",
+			"type" : "mask",
+			"position" : "820,991",
+			"size" : "219,35",
+			"path" : "{path}infobkgb.svg",
+		},
+		{
+			"name" : "mask_bkg_l",
+			"type" : "mask",
+			"position" : "-4,850",
+			"size" : "320, 141",
+			"path" : "{path}maskbkgl.svg",
+		},
+		{
+			"name" : "mask_bkg_r",
+			"type" : "mask",
+			"position" : "1617,850",
+			"size" : "320, 141",
+			"path" : "{path}maskbkgr.svg",
+		},
+	],
+
+	"commands" : [
+		{
+			"name" : "show",
+			"transition" : [
+		
+			{"fr" : 0, "layer" : "command", "type" : "script", "to" : "updateInfo()"},
+			{"fr" : 0, "layer" : "curtain_gray", "type" : "visible", "to" : 1},
+			{"fr" : 6, "layer" : "curtain_yellow", "type" : "visible", "to" : 1},
+			{"fr" : 10, "layer" : "curtain_white", "type" : "visible", "to" : 1},
+			{"fr" : 0, "layer" : "mask_bkg_l", "type" : "visible", "to" : 1},
+			{"fr" : 0, "layer" : "mask_bkg_r", "type" : "visible", "to" : 1},
+			{"fr" : 18, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "logo_team_l", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "logo_team_r", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "team_name_l", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "team_city_l", "type" : "visible", "to" : 1},
+			{"fr" : 30, "layer" : "team_name_r", "type" : "visible", "to" : 1},
+			{"fr" : 30, "layer" : "team_city_r", "type" : "visible", "to" : 1},
+			{"fr" : 32, "layer" : "league_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 32, "layer" : "league_logo", "type" : "visible", "to" : 1},
+			{"fr" : 32, "layer" : "mask_bkg_l", "type" : "visible", "to" : 0},
+			{"fr" : 24, "layer" : "score_l", "type" : "visible", "to" : 1},
+			{"fr" : 34, "layer" : "score_r", "type" : "visible", "to" : 1},
+			{"fr" : 34, "layer" : "info_bkg_top", "type" : "visible", "to" : 1},
+			{"fr" : 34, "layer" : "info_bkg_bottom", "type" : "visible", "to" : 1},
+			{"fr" : 34, "layer" : "mask_info_top", "type" : "visible", "to" : 1},
+			{"fr" : 34, "layer" : "mask_info_bottom", "type" : "visible", "to" : 1},
+			{"fr" : 44, "layer" : "match_status", "type" : "visible", "to" : 1},
+			{"fr" : 50, "layer" : "match_time", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "dur" : 35, "layer" : "curtain_gray", "type" : "move", "curve":18, "from" : "-1067,850", "to" : "1618,850"},
+			{"fr" : 6, "dur" : 34, "layer" : "curtain_yellow", "type" : "move", "curve":18, "from" : "-1067,850", "to" : "1618,850"},
+			{"fr" : 10, "dur" : 34, "layer" : "curtain_white", "type" : "move", "curve":18, "from" : "-1067,850", "to" : "1618,850"},
+
+			{"fr" : 24, "dur" :30, "layer" : "score_l", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 24, "dur" : 30, "layer" : "score_l", "type" : "move", "curve":2, "from" : "868,846", "to" : "858,878"},
+
+			{"fr" : 31, "dur" :30, "layer" : "score_r", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 31, "dur" : 30, "layer" : "score_r", "type" : "move", "curve":2, "from" : "980,846", "to" : "970,878"},
+
+			{"fr" : 19, "dur" :30, "layer" : "logo_team_l", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 19, "dur" : 30, "layer" : "logo_team_l", "type" : "move", "curve":2, "from" : "360,871", "to" : "320,871"},
+
+			{"fr" : 19, "dur" :30, "layer" : "logo_team_r", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 19, "dur" : 30, "layer" : "logo_team_r", "type" : "move", "curve":2, "from" : "1118,871", "to" : "1078,871"},
+
+			{"fr" : 33, "dur" : 30, "layer" : "mask_info_top", "type" : "move", "curve":2, "from" : "836,815", "to" : "1108,815"},
+			{"fr" : 63, "layer" : "mask_info_top", "type" : "visible", "to" : 0},
+
+			{"fr" : 40, "dur" : 20, "layer" : "mask_info_bottom", "type" : "move", "curve":2, "from" : "820,991", "to" : "1031,991"},
+			{"fr" : 60, "layer" : "mask_info_bottom", "type" : "visible", "to" : 0},
+
+			{"fr" : 44, "dur" :22, "layer" : "match_status", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 44, "dur" : 25, "layer" : "match_status", "type" : "move", "curve":2, "from" : "817,815", "to" : "847,815"},
+
+			{"fr" : 50, "dur" :22, "layer" : "match_time", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 50, "dur" : 25, "layer" : "match_time", "type" : "move", "curve":2, "from" : "811,993", "to" : "841,993"},
+
+
+			{"fr" : 19, "dur" :30, "layer" : "team_name_l", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 19, "dur" : 26, "layer" : "team_name_l", "type" : "move", "curve":2, "from" : "463,870", "to" : "433,870"},
+
+			{"fr" : 19, "dur" :30, "layer" : "team_city_l", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 19, "dur" : 26, "layer" : "team_city_l", "type" : "move", "curve":2, "from" : "493,926", "to" : "433,926"},
+
+			{"fr" : 30, "dur" :30, "layer" : "team_name_r", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 30, "dur" : 26, "layer" : "team_name_r", "type" : "move", "curve":2, "from" : "1238,870", "to" : "1208,870"},
+
+			{"fr" : 30, "dur" :30, "layer" : "team_city_r", "type" : "opacity", "from" : "0", "to" : "1"},
+			{"fr" : 30, "dur" : 30, "layer" : "team_city_r", "type" : "move", "curve":2, "from" : "1268,926", "to" : "1208,926"},
+
+			{"fr" : 32, "dur" : 38, "layer" : "league_bkg", "type" : "move", "curve":2, "from" : "280,853", "to" : "118,853"},
+			{"fr" : 32, "dur" : 38, "layer" : "league_logo", "type" : "move", "curve":2, "from" : "324,866", "to" : "162,866"},
+
+			{"fr" : 70, "layer" : "command", "type" : "signal", "to" : "end-show"}
+			{"fr" : 370, "layer" : "command", "type" : "command", "to" : "hide"},
+
+			]
+		},
+	
+		{
+			"name" : "hide",
+			"transition" : [
+
+			{"fr" : 65, "layer" : "mask_bkg_l", "type" : "visible", "to" : 1},
+			{"fr" : 65, "layer" : "mask_info_bottom", "type" : "visible", "to" : 1},
+			{"fr" : 77, "layer" : "mask_info_top", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "dur" : 30, "layer" : "league_bkg", "type" : "move", "curve":2, "from" : "", "to" : "280,853"},
+			{"fr" : 0, "dur" : 30, "layer" : "league_logo", "type" : "move", "curve":2, "from" : "", "to" : "324,866"}
+
+			{"fr" : 65, "dur" :30, "layer" : "match_status", "type" : "opacity", "from" : "", "to" : "0"},
+			{"fr" : 65, "dur" : 30, "layer" : "match_status", "type" : "move", "curve":1, "from" : "", "to" : "810,815"},
+			{"fr" : 77, "dur" : 19, "layer" : "mask_info_top", "type" : "move", "curve":2, "from" : "", "to" : "836,815"},
+		
+			{"fr" : 65, "dur" :22, "layer" : "match_time", "type" : "opacity", "from" : "", "to" : "0"},
+			{"fr" : 65, "dur" : 22, "layer" : "match_time", "type" : "move", "curve":2, "from" : "", "to" : "811,993"},
+			{"fr" : 65, "dur" : 25, "layer" : "mask_info_bottom", "type" : "move", "curve":2, "from" : "", "to" : "820,991"},
+	
+			{"fr" : 73, "dur" : 24, "layer" : "curtain_gray", "type" : "move", "curve":18, "from" : "", "to" : "-1067,850"},
+			{"fr" : 77, "dur" : 33, "layer" : "curtain_yellow", "type" : "move", "curve":18, "from" : "", "to" : "-1067,850"},
+			{"fr" : 87, "dur" : 25, "layer" : "curtain_white", "type" : "move", "curve":18, "from" : "", "to" : "-1067,850"},
+
+			{"fr" : 30, "layer" : "league_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 30, "layer" : "league_logo", "type" : "visible", "to" : 0},
+
+			{"fr" : 88, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "logo_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "logo_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "team_name_l", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "team_city_l", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "team_name_r", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "team_city_r", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "score_l", "type" : "visible", "to" : 0},
+			{"fr" : 88, "layer" : "score_r", "type" : "visible", "to" : 0},
+
+			{"fr" : 90, "layer" : "match_time", "type" : "visible", "to" : 0},
+			{"fr" : 90, "layer" : "info_bkg_bottom", "type" : "visible", "to" : 0},
+			{"fr" : 90, "layer" : "mask_info_bottom", "type" : "visible", "to" : 0},
+
+			{"fr" : 105, "layer" : "match_status", "type" : "visible", "to" : 0},
+			{"fr" : 105, "layer" : "info_bkg_top", "type" : "visible", "to" : 0},
+			{"fr" : 105, "layer" : "mask_info_top", "type" : "visible", "to" : 0},
+
+			{"fr" : 115, "layer" : "curtain_gray", "type" : "visible", "to" : 0},
+			{"fr" : 115, "layer" : "curtain_yellow", "type" : "visible", "to" : 0},
+			{"fr" : 115, "layer" : "curtain_white", "type" : "visible", "to" : 0},
+			{"fr" : 115, "layer" : "mask_bkg_l", "type" : "visible", "to" : 0},
+			{"fr" : 115, "layer" : "mask_bkg_r", "type" : "visible", "to" : 0},
+
+
+
+			{"fr" : 115, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+
+			]
+		},
+	]
+} 		

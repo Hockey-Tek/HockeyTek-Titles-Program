@@ -1,0 +1,401 @@
+{
+		"template" : "0023",
+		"title": "Запрос тренера гости",
+		"scale" : "1920,1080",
+		"rate" : 50.0,
+		"isolate": 1,
+
+		"values" : {
+		"$dispute-text" : "",
+		"$team-r-logo" : "",
+		"$team-r-color1" : ""
+		"$team-r-name1" : "",
+		"$team-r-city" : ""
+		},
+
+	"script": "
+	function init() 
+	{
+		title.value = translate(template.values('$dispute-text'));
+		title.update = 1;
+		title.autoredraw = 0;
+	}
+	function translate(status) {
+		var out = status;
+
+		if (status == \"Coach's Challenge\")
+
+		out = \"Coach's Challenge\";
+
+		else if (status == 'Call Overturned') {
+			out = 'Call Overturned';
+			bkg_no.visible = true;
+			select_bkg_dw_tr2.visible = true;
+		}
+		else if (status == 'Call Accepted') {
+			out = 'Call Accepted';
+			bkg_ok.visible = true;
+			select_bkg_up_tr2.visible = true;
+		}
+
+		return out;
+	}
+	function updateStatus() {
+		title.value = translate(template.values('$dispute-text'));
+		title.update = 1;
+	}
+	function updateText() {
+		text_team.value = template.values('$team-r-name1') + ', ' + template.values('$team-r-city');
+		text_team.update = 1;
+	} ",
+	"fonts" :
+	[
+		"{path-fonts}MatchTV-Medium.ttf",
+		"{path-fonts}MatchTV-Bold.ttf",
+		"{path-fonts}MatchTV-Reg.ttf"
+	],
+
+	"layers" : [
+			{
+				"name": "trans_1",
+				"type": "solid",
+				"position": "548,817",
+				"size": "1116,125",
+				"color": "#DCDCDC"
+			},
+			{
+				"name": "trans_2",
+				"type": "solid",
+				"position": "548,817",
+				"size": "1116,125",
+				"color": "#B0B0B0"
+			},
+			{
+				"name": "trans_3",
+				"type": "solid",
+				"position": "548,817",
+				"size": "1116,125",
+				"color": "#9F9F9F"
+			},
+			{
+				"name": "main_bkg",
+				"type": "solid",
+				"position": "548,817",
+				"size": "1116,125",
+				"color": "#DCDCDC"
+			},
+			{
+				"name": "title",
+				"type": "text",
+				"position": "570,817",
+				"size": "960,125",
+				"value": "$dispute-text",
+				"color": "#000000",
+				"align": "1,0",
+				"case": 1,
+				"scaled": "1,0",
+				"font": "MatchTV,60,800,0,0"
+			},
+			{
+				"name": "logo_bkg",
+				"type": "solid",
+				"position": "353,817",
+				"size": "195,170",
+				"color": "$team-r-color1"
+			},
+			{
+				"name": "team_logo",
+				"type": "image",
+				"position": "330,785",
+				"size": "235,235",
+				"color": "255,255,255",
+				"path": "$team-r-logo"
+			},
+			{
+				"name": "logo_tr",
+				"type": "solid",
+				"position": "353,817",
+				"size": "195,170",
+				"color": "255,255,255"
+			},
+			{
+				"name": "logo_mask",
+				"type": "mask",
+				"position": "158,817",
+				"size": "195, 170",
+				"color": "255,255,255",
+			},
+			{
+				"name": "bottom_bkg",
+				"type": "solid",
+				"position": "548,942",
+				"size": "1116,45",
+				"color": "#373839"
+			},
+			{
+				"name": "bottom_bkg_tr",
+				"type": "solid",
+				"position": "548,942",
+				"size": "1116,45",
+				"color": "#27282A"
+			},
+			{
+				"name": "text_team",
+				"type": "text",
+				"position": "570,942",
+				"size": "1116,45",
+				"value": "",
+				"color": "255,255,255",
+				"align": "1,0",
+				"scaled": "1,0",
+				"case": 1,
+				"font": "MatchTV,28,800,0,0"
+			},
+			{
+				"name": "alert_line",
+				"type": "solid",
+				"position": "544,817",
+				"size": "5,170",
+				"color": "$team-r-color1"
+			},
+			{
+				"name": "select_bkg_up",
+				"type": "solid",
+				"position": "1519,817",
+				"size": "145,61",
+				"color": "#959595"
+			},
+			{
+				"name": "bkg_ok",
+				"type": "solid",
+				"position": "1519,817",
+				"size": "145,61",
+				"color": "#15D600"
+			},
+			{
+				"name": "ok",
+				"type": "svg",
+				"position": "1570,830",
+				"size": "46,36",
+				"path": "{path}ok.svg",
+			},
+			{
+				"name": "select_bkg_up_tr",
+				"type": "solid",
+				"position": "1519,817",
+				"size": "145,61",
+				"color": "#FFFFFF"
+			},
+			{
+				"name": "select_bkg_up_tr2",
+				"type": "solid",
+				"position": "1519,817",
+				"size": "145,61",
+				"color": "#FFFFFF"
+			},
+			{
+				"name": "select_bkg_dw",
+				"type": "solid",
+				"position": "1519,881",
+				"size": "145,61",
+				"color": "#959595"
+			},
+			{
+				"name": "bkg_no",
+				"type": "solid",
+				"position": "1519,881",
+				"size": "145,61",
+				"color": "#FF0000"
+			},
+			{
+				"name": "no",
+				"type": "svg",
+				"position": "1573,894",
+				"size": "38,38",
+				"path": "{path}no.svg",
+			},
+			{
+				"name": "select_bkg_dw_tr",
+				"type": "solid",
+				"position": "1519,881",
+				"size": "145,61",
+				"color": "#FFFFFF"
+			},
+			{
+				"name": "select_bkg_dw_tr2",
+				"type": "solid",
+				"position": "1519,881",
+				"size": "145,61",
+				"color": "#FFFFFF"
+			},
+
+	],
+
+	"commands" : [
+
+				{
+					"name": "show",
+					"transition": [
+
+						{ "fr": 5, "layer": "command", "type": "script", "to": "init()" },
+
+						{ "fr": 0, "layer": "trans_1", "type": "visible", "to": 1 },
+						{ "fr": 0, "dur": 6, "layer": "trans_1", "type": "clip", "curve": 0, "from": "0,42,5,-42", "to": "0,0,5,85" },
+						{ "fr": 10, "dur": 22, "layer": "trans_1", "type": "clip", "curve": 2, "from": "0,0,5,85", "to": "0,0,1116,125" },
+						{ "fr": 50, "layer": "trans_1", "type": "visible", "to": 0 },
+
+						{ "fr": 17, "layer": "trans_2", "type": "visible", "to": 1 },
+						{ "fr": 17, "dur": 12, "layer": "trans_2", "type": "opacity", "from": "0", "to": "0." },
+						{ "fr": 17, "dur": 12, "layer": "trans_2", "type": "clip", "curve": 2, "from": "0,0,0,85", "to": "0,0,1116,125" },
+						{ "fr": 50, "layer": "trans_2", "type": "visible", "to": 0 },
+
+						{ "fr": 14, "layer": "trans_3", "type": "visible", "to": 1 },
+						{ "fr": 14, "dur": 4, "layer": "trans_3", "type": "clip", "curve": 0, "from": "0,42,5,-42", "to": "0,0,5,125" },
+						{ "fr": 20, "dur": 10, "layer": "trans_3", "type": "clip", "curve": 2, "from": "0,0,5,125", "to": "0,0,1116,125" },
+						{ "fr": 50, "layer": "trans_3", "type": "visible", "to": 0 },
+
+						{ "fr": 28, "layer": "main_bkg", "type": "visible", "to": 1 },
+						{ "fr": 28, "dur": 22, "layer": "main_bkg", "type": "clip", "curve": 2, "from": "0,0,0,125", "to": "0,0,1116,125" },
+
+						{ "fr": 35, "layer": "title", "type": "visible", "to": 1 },
+						{ "fr": 35, "dur": 22, "layer": "title", "type": "clip", "curve": 2, "from": "0,0,0,85", "to": "0,0,1116,125" },
+
+						{ "fr": 6, "layer": "bottom_bkg", "type": "visible", "to": 1 },
+						{ "fr": 5, "dur": 1, "layer": "bottom_bkg", "type": "opacity", "to": "0.8" },
+						{ "fr": 6, "dur": 6, "layer": "bottom_bkg", "type": "clip", "curve": 0, "from": "0,0,5,0", "to": "0,0,5,85" },
+						{ "fr": 26, "dur": 20, "layer": "bottom_bkg", "type": "clip", "curve": 2, "from": "0,0,5,85", "to": "0,0,1116,125" },
+
+						{ "fr": 29, "layer": "bottom_bkg_tr", "type": "visible", "to": 1 },
+						{ "fr": 29, "dur": 22, "layer": "bottom_bkg_tr", "type": "clip", "curve": 0, "from": "0,0,5,85", "to": "0,0,1116,125" },
+						{ "fr": 43, "dur": 20, "layer": "bottom_bkg_tr", "type": "opacity", "from": "1", "to": "0.3" },
+						{ "fr": 45, "dur": 16, "layer": "bottom_bkg_tr", "type": "clip", "curve": 2, "from": "0,0,1115,125", "to": "1116,0,0,125" },
+
+						{ "fr": 20, "layer": "alert_line", "type": "visible", "to": 1 },
+						{ "fr": 20, "dur": 12, "layer": "alert_line", "type": "clip", "curve": 2, "from": "0,0,170,0", "to": "0,0,5,170" },
+
+						{ "fr": 30, "layer": "command", "type": "script", "to": "updateText()" },
+						{ "fr": 35, "layer": "text_team", "type": "visible", "to": 1 },
+						{ "fr": 35, "dur": 22, "layer": "text_team", "type": "clip", "curve": 2, "from": "0,0,0,85", "to": "0,0,1116,125" },
+
+						{ "fr": 35, "layer": "logo_bkg", "type": "visible", "to": 1 },
+						{ "fr": 35, "dur": 15, "layer": "logo_bkg", "type": "clip", "curve": 2, "from": "290,0,0,170", "to": "0,0,290,170" },
+
+						{ "fr": 50, "layer": "logo_tr", "type": "visible", "to": 1 },
+						{ "fr": 50, "dur": 12, "layer": "logo_tr", "type": "clip", "curve": 2, "from": "0,0,0,170", "to": "0,0,195,170" },
+						{ "fr": 60, "dur": 10, "layer": "logo_tr", "type": "opacity", "from": "1", "to": "0" },
+						{ "fr": 70, "layer": "logo_tr", "type": "visible", "to": 0 },
+
+						{ "fr": 55, "layer": "team_logo", "type": "visible", "to": 1 },
+						{ "fr": 55, "dur": 12, "layer": "team_logo", "type": "move", "curve": 2, "from": "100,785", "to": "330,785" },
+						{ "fr": 55, "dur": 12, "layer": "team_logo", "type": "clip", "curve": 2, "from": "60,32,235,170", "to": "23,32,195,170" },
+						{ "fr": 55, "dur": 25, "layer": "team_logo", "type": "opacity", "from": "0", "to": "1" },
+
+						{ "fr": 50, "layer": "select_bkg_up", "type": "visible", "to": 1 },
+						{ "fr": 50, "dur": 10, "layer": "select_bkg_up", "type": "clip", "curve": 2, "from": "145,0,0,61", "to": "0,0,145,61" },
+
+						{ "fr": 64, "layer": "select_bkg_up_tr", "type": "visible", "to": 1 },
+						{ "fr": 64, "dur": 10, "layer": "select_bkg_up_tr", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,145,61" },
+						{ "fr": 76, "dur": 10, "layer": "select_bkg_up_tr", "type": "opacity", "from": "1", "to": "0" },
+						{ "fr": 87, "layer": "select_bkg_up_tr", "type": "visible", "to": 0 },
+
+						{ "fr": 76, "layer": "ok", "type": "visible", "to": 1 },
+						{ "fr": 76, "dur": 10, "layer": "ok", "type": "move", "curve": 2, "from": "1520,830", "to": "1570,830" },
+
+						{ "fr": 54, "layer": "select_bkg_dw", "type": "visible", "to": 1 },
+						{ "fr": 54, "dur": 10, "layer": "select_bkg_dw", "type": "clip", "curve": 2, "from": "145,0,0,61", "to": "0,0,145,61" },
+
+						{ "fr": 68, "layer": "select_bkg_dw_tr", "type": "visible", "to": 1 },
+						{ "fr": 68, "dur": 10, "layer": "select_bkg_dw_tr", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,145,61" },
+						{ "fr": 80, "dur": 10, "layer": "select_bkg_dw_tr", "type": "opacity", "from": "1", "to": "0" },
+						{ "fr": 80, "layer": "no", "type": "visible", "to": 1 },
+
+						{ "fr": 80, "dur": 10, "layer": "no", "type": "move", "curve": 2, "from": "1520,894", "to": "1573,894" },
+						{ "fr": 54, "layer": "logo_mask", "type": "visible", "to": 1 },
+
+						{ "fr": 63, "layer": "command", "type": "signal", "to": "end-show" },
+
+					]
+				},
+
+				{
+					"name": "hide",
+					"transition": [
+
+						{ "fr": 5, "dur": 12, "layer": "main_bkg", "type": "clip", "curve": 1, "from": "0,0,1116,125", "to": "0,0,0,85" },
+						{ "fr": 17, "layer": "main_bkg", "type": "visible", "to": 0 },
+
+						{ "fr": 5, "dur": 10, "layer": "title", "type": "clip", "curve": 1, "from": "0,0,1116,125", "to": "0,0,0,85" },
+						{ "fr": 15, "layer": "title", "type": "visible", "to": 0 },
+
+						{ "fr": 5, "dur": 12, "layer": "player_number", "type": "clip", "curve": 1, "from": "0,0,1116,125", "to": "0,0,0,85" },
+						{ "fr": 17, "layer": "player_number", "type": "visible", "to": 0 },
+
+						{ "fr": 0, "dur": 12, "layer": "bottom_bkg", "type": "clip", "curve": 1, "from": "0,0,1116,125", "to": "0,0,0,85" },
+						{ "fr": 12, "layer": "bottom_bkg", "type": "visible", "to": 0 },
+
+						{ "fr": 0, "dur": 12, "layer": "text_team", "type": "clip", "curve": 1, "from": "0,0,1116,125", "to": "0,0,0,85" },
+						{ "fr": 12, "layer": "text_team", "type": "visible", "to": 0 },
+
+						{ "fr": 5, "dur": 12, "layer": "alert_line", "type": "clip", "curve": 1, "from": "0,0,5,170", "to": "0,0,170,0" },
+						{ "fr": 17, "layer": "alert_line", "type": "visible", "to": 0 },
+
+						{ "fr": 0, "dur": 10, "layer": "select_bkg_up", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "select_bkg_up", "type": "visible", "to": 0 },
+						{ "fr": 0, "dur": 10, "layer": "select_bkg_dw", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "select_bkg_dw", "type": "visible", "to": 0 },
+
+						{ "fr": 0, "dur": 10, "layer": "ok", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "ok", "type": "visible", "to": 0 },
+						{ "fr": 0, "dur": 10, "layer": "no", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "no", "type": "visible", "to": 0 },
+
+						{ "fr": 0, "dur": 10, "layer": "bkg_ok", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "bkg_ok", "type": "visible", "to": 0 },
+						{ "fr": 0, "dur": 10, "layer": "bkg_no", "type": "clip", "curve": 1, "from": "0,0,145,61", "to": "0,0,0,61" },
+						{ "fr": 10, "layer": "bkg_no", "type": "visible", "to": 0 },
+
+
+						{ "fr": 3, "dur": 13, "layer": "logo_mask", "type": "move", "curve": 1, "from": "-32,817", "to": "258,817" },
+						{ "fr": 17, "layer": "logo_mask", "type": "visible", "to": 0 },
+						{ "fr": 17, "layer": "logo_bkg", "type": "visible", "to": 0 },
+						{ "fr": 17, "layer": "player_photo", "type": "visible", "to": 0 },
+						{ "fr": 15, "layer": "team_logo", "type": "visible", "to": 0 },
+
+						{ "fr": 17, "layer": "command", "type": "signal", "to": "end-hide" },
+					]
+				},
+				{
+					"name": "auto-hide",
+					"transition":
+						[
+							{ "fr": 75, "layer": "command", "type": "command", "to": "hide" },
+							{ "fr": 1, "layer": "command", "type": "signal", "to": "end-cmd" }
+						]
+				},
+				{
+					"name": "status-changed",
+					"transition":
+						[
+							{ "fr": 0, "dur": 10, "layer": "title", "type": "opacity", "to": "0" },
+							{ "fr": 10, "layer": "command", "type": "script", "to": "updateStatus()" },
+							{ "fr": 10, "dur": 10, "layer": "title", "type": "opacity", "to": "1" },
+
+							{ "fr": 10, "dur": 10, "layer": "bkg_ok", "type": "clip", "curve": 2, "from": "145,0,0,61", "to": "0,0,145,61" },
+
+							{ "fr": 10, "dur": 1, "layer": "select_bkg_up_tr2", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,0,61" },
+							{ "fr": 20, "dur": 10, "layer": "select_bkg_up_tr2", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,145,61" },
+							{ "fr": 28, "dur": 10, "layer": "select_bkg_up_tr2", "type": "opacity", "from": "1", "to": "0" },
+							{ "fr": 38, "layer": "select_bkg_up_tr2", "type": "visible", "to": 0 },
+
+							{ "fr": 10, "dur": 10, "layer": "bkg_no", "type": "clip", "curve": 2, "from": "145,0,0,61", "to": "0,0,145,61" },
+							{ "fr": 10, "dur": 1, "layer": "select_bkg_dw_tr2", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,0,61" },
+							{ "fr": 20, "dur": 10, "layer": "select_bkg_dw_tr2", "type": "clip", "curve": 2, "from": "0,0,0,61", "to": "0,0,145,61" },
+							{ "fr": 28, "dur": 10, "layer": "select_bkg_dw_tr2", "type": "opacity", "from": "1", "to": "0" },
+							{ "fr": 38, "layer": "select_bkg_dw_tr2", "type": "visible", "to": 0 },
+
+							{ "fr": 38, "layer": "command", "type": "signal", "to": "end-cmd" }
+						]
+				},
+
+	]
+}

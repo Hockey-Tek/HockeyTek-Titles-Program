@@ -1,0 +1,520 @@
+﻿{
+	"template" : "0002",
+	"title": "Нижний титр счета в периоде",
+	"scale" : "1920,1080",
+	"origin" : "0, 0",
+	"rate" : 50.0,
+
+	"values" : {
+		"$match-status" : "",
+		"$match-time" : "00:00",
+		"$league-logo" : "",
+		"$score-right" : "",
+		"$score-left" : "",
+		"$team-r-logo" : "",
+		"$team-l-logo" : "",
+		"$team-l-name1" : "",
+		"$team-r-name1" : "",
+		"$team-r-city" : "",
+		"$team-l-city" : "",
+		"$team-l-color1" : "",
+		"$team-r-color1" : "",
+ 	},
+
+	"script" : "
+	function init()	
+	{
+		updateInfo();
+		updateMatchTime()
+	}
+	function updateMatchTime() 
+	{
+		var status = template.values('$match-status');
+
+		if(status == 'End of 1st' || status == 'End of 2nd' || status == 'End of 3rd' || status == 'Final')
+		{
+		match_time.visible = 0;
+		}
+		else
+		{
+		match_time.visible = 1;
+		}
+
+	}
+	function updateInfo() {
+	match_status.value = translate(template.values('$match-status'))
+	match_status.update = 1;
+	}
+	function translate(status)
+			{
+				var out = status;
+
+				if(status == 'Final')
+					out = 'FINAL';
+
+				else if(status == 'Final-SO')
+					out = 'FINAL/SO';
+
+				else if(status == 'Final-OT')
+					out = 'FINAL/OT';
+
+				else if(status == 'End of 1st')
+					out = 'AFTER 1ST PERIOD';
+
+				else if(status == 'End of 2nd')
+					out = 'AFTER 2ND PERIOD';
+
+				else if(status == 'End of 3rd')
+					out = 'AFTER 3RD PERIOD';
+
+				else if(status == 'End of OT')
+					out = 'AFTER OVERTIME';
+
+				else if(status == 'End of SO')
+					out = 'AFTER SHOOTOUT';
+
+				else if(status == 'Start of 1st')
+					out = 'START 1ST PERIOD';
+
+				else if(status == 'Start of 2nd')
+					out = 'START 2ND PERIOD';
+
+				else if(status == 'Start of 3rd')
+					out = 'START 3RD PERIOD';
+
+				else if(status == 'Start of OT')
+					out = 'START OVERTIME';
+
+				else if(status == 'Start of SHOOTOUT')
+					out = 'START SHOOTOUT';
+				
+				else if(status == '1st')
+					out = '1ST PERIOD';
+				
+				else if(status == '2nd')
+					out = '2ND PERIOD';
+				
+				else if(status == '3rd')
+					out = '3RD PERIOD';
+				
+				else if(status == 'OT')
+					out = 'OVERTIME';
+				
+				else if(status == 'SO' || status == 'Start of SHOOTOUT')
+					out = 'SHOOTOUT';
+
+				return out;
+	}",
+
+	"fonts" : [
+		"{path-fonts}MatchTV-Medium.ttf",
+		"{path-fonts}MatchTV-Bold.ttf",
+		"{path-fonts}MatchTV-Reg.ttf"
+			  ],
+
+	"layers" : [
+		{
+			"name" : "bkg_logo_team_l",
+			"type" : "solid",
+			"position" : "279, 849",
+			"size" : "175,154",
+			"color": "$team-l-color1",
+		},
+		{
+			"name" : "logo_team_l",
+			"type" : "image",
+			"position" : "300, 858",
+			"size" : "135,135",
+			"path" : "$team-l-logo",
+		},
+		{
+			"name" : "trb_logo_team_l",
+			"type" : "solid",
+			"position" : "279, 849",
+			"size" : "175,154",
+			"color": "#000000",
+		},
+		{
+			"name" : "trw_logo_team_l",
+			"type" : "solid",
+			"position" : "279, 849",
+			"size" : "175,154",
+			"color": "#ffffff",
+		},
+		{
+			"name" : "mask_logo_team_l",
+			"type" : "mask",
+			"position" : "104, 849",
+			"size" : "175,154",
+			"color": "#000000",
+		},
+		{
+			"name" : "bkg_logo_team_r",
+			"type" : "solid",
+			"position" : "1466, 849",
+			"size" : "175,154",
+			"color": "$team-r-color1",
+		},
+		{
+			"name" : "logo_team_r",
+			"type" : "image",
+			"position" : "1485, 858",
+			"size" : "135,135",
+			"path" : "$team-r-logo",
+		},
+		{
+			"name" : "trb_logo_team_r",
+			"type" : "solid",
+			"position" : "1466, 849",
+			"size" : "175,154",
+			"color": "#000000",
+		},
+		{
+			"name" : "trw_logo_team_r",
+			"type" : "solid",
+			"position" : "1466, 849",
+			"size" : "175,154",
+			"color": "#ffffff",
+		},
+		{
+			"name" : "mask_logo_team_r",
+			"type" : "mask",
+			"position" : "1291, 849",
+			"size" : "175,154",
+			"color": "#000000",
+		},
+		{
+			"name": "period_bkg",
+			"type": "solid",
+			"position": "848, 807",
+			"size": "224, 42",
+			"color": "#000000",
+		},
+		{
+			"name": "match_status",
+			"type": "text",
+			"position": "848, 807",
+			"size": "224, 42",
+			"value": "",
+			"align": "0,0",
+			"scaled": "1,0",
+			"color": "255,255,255",
+			"font": "MatchTV,24,700,0,0",
+		},
+		{
+			"name": "main_bkg",
+			"type": "solid",
+			"position": "454, 849",
+			"size": "1012, 112",
+			"color": "#DCDCDC",
+		},
+		{
+			"name": "main_bkg_tr_a",
+			"type": "solid",
+			"position": "454, 849",
+			"size": "1012, 112",
+			"color": "#959595",
+		},
+		{
+			"name": "main_bkg_tr_b",
+			"type": "solid",
+			"position": "454, 849",
+			"size": "1012, 112",
+			"color": "#000000",
+		},
+		{
+			"name": "line_l",
+			"type": "solid",
+			"position": "848, 849",
+			"size": "2, 112",
+			"color": "#000000",
+		},
+		{
+			"name" : "score_l",
+			"type" : "text",
+			"position" : "848, 849",
+			"size" : "112,112",
+			"value" : "$score-left",
+			"color" : "0,0,0",
+			"align" : "0,0",
+			"font": "MatchTV,85,800,0,0",
+		},
+		{
+			"name": "line_c",
+			"type": "solid",
+			"position": "959, 849",
+			"size": "2, 112",
+			"color": "#000000",
+		},
+		{
+			"name" : "score_r",
+			"type" : "text",
+			"position" : "959, 849",
+			"size" : "112,112",
+			"value" : "$score-right",
+			"color" : "0,0,0",
+			"align" : "0,0",
+			"font": "MatchTV,85,800,0,0",
+		},
+		{
+			"name": "line_r",
+			"type": "solid",
+			"position": "1070, 849",
+			"size": "2, 112",
+			"color": "#000000",
+		},
+		{
+			"name": "sity_bkg_tr",
+			"type": "solid",
+			"position": "454, 961",
+			"size": "1012, 42",
+			"color": "#000000",
+		},
+		{
+			"name": "sity_bkg",
+			"type": "solid",
+			"position": "454, 961",
+			"size": "1012, 42",
+			"color": "#000000",
+		},
+		{
+			"name" : "name_team_l",
+			"type" : "text",
+			"position" : "475, 849",
+			"size" : "355,112",
+			"value" : "$team-l-name1",
+			"color" : "#000000",
+			"align" : "1,0",
+			"case" : "1",
+			"scaled": "1,0",
+			"font": "MatchTV,44,800,0,0",
+		},
+		{
+			"name": "city_team_l",
+			"type": "text",
+			"position": "475, 961",
+			"size": "355, 42",
+			"value": "$team-l-city",
+			"color": "255,255,255,255",
+			"align": "1,0",
+			"case": "1",
+			"scaled": "1,0",
+			"font": "MatchTV,23,700,0,0",
+		},
+		{
+			"name" : "name_team_r",
+			"type" : "text",
+			"position" : "1095, 849",
+			"size" : "355,112",
+			"value" : "$team-r-name1",
+			"color" : "#000000",
+			"align" : "2,0",
+			"case" : "1",
+			"scaled": "1,0",
+			"font": "MatchTV,44,800,0,0",
+		},
+		{
+			"name" : "city_team_r",
+			"type": "text",
+			"position": "1095, 961",
+			"size": "355, 42",
+			"value": "$team-r-city",
+			"color": "255,255,255,255",
+			"align": "2,0",
+			"case": "1",
+			"scaled": "1,0",
+			"font": "MatchTV,23,700,0,0",
+		},	
+		{
+			"name": "time_bkg",
+			"type": "solid",
+			"position": "848, 961",
+			"size": "224, 42",
+			"color": "#000000",
+		},
+		{
+			"name": "match_time",
+			"type": "text",
+			"position": "848, 961",
+			"size": "224, 42",
+			"value": "$match-time",
+			"align": "0,0",
+			"scaled": "1,0",
+			"case": "1",
+			"color": "255,255,255",
+			"font": "MatchTV,35,700,0,0"
+		},
+		{
+			"name": "mask_l",
+			"type": "mask",
+			"position": "279, 807",
+			"size": "681, 196",
+			"color": "#000000",
+		},
+		{
+			"name": "mask_r",
+			"type": "mask",
+			"position": "960, 807",
+			"size": "681, 196",
+			"color": "#000000",
+		},
+	],
+
+	"commands" : [
+		{
+			"name" : "show",
+			"transition" : [
+
+			{"fr" : 0  "layer" : "command", "type" : "script", "to" : "init()"},
+
+			{"fr" : 3, "layer" : "bkg_logo_team_l", "type" : "visible", "to" : 1},
+          	{"fr" : 3, "dur" : 8, "layer" : "bkg_logo_team_l", "type" : "clip", "curve": 2, "from" : "170,0,175,0", "to" :"170,0,175,154"},
+			{"fr" : 15, "dur" : 6, "layer" : "bkg_logo_team_l", "type" : "clip", "curve": 2, "from" : "170,0,175,154", "to" :"0,0,175,154"},
+			
+			{"fr" : 21, "layer" : "trb_logo_team_l", "type" : "visible", "to" : 1},
+ 			{"fr" : 21, "dur" : 15, "layer" : "trb_logo_team_l", "type" : "clip", "curve": 11, "from" : "0,0,0,154", "to" :"0,0,175,154"},
+			{"fr" : 21, "dur" : 6, "layer" : "trb_logo_team_l", "type" : "opacity", "curve": 0, "from" :"0.3", "to" : "0.3"},
+			{"fr" : 35, "layer" : "trb_logo_team_l", "type" : "visible", "to" : 0},
+			
+			{"fr" : 21, "layer" : "trw_logo_team_l", "type" : "visible", "to" : 1},
+ 			{"fr" : 21, "dur" : 15, "layer" : "trw_logo_team_l", "type" : "clip", "curve": 11, "from" : "0,0,0,154", "to" :"0,0,175,154"},
+			{"fr" : 31, "dur" : 23, "layer" : "trw_logo_team_l", "type" : "opacity", "curve": 1, "from" :"1", "to" : "0"},
+			{"fr" : 54, "layer" : "trw_logo_team_l", "type" : "visible", "to" : 0},
+
+			{"fr" : 3, "layer" : "bkg_logo_team_r", "type" : "visible", "to" : 1},
+			{"fr" : 3, "dur" : 8, "layer" : "bkg_logo_team_r", "type" : "clip", "curve": 2, "from" : "170,0,175,0", "to" :"170,0,175,154"},
+			{"fr" : 15, "dur" : 6, "layer" : "bkg_logo_team_r", "type" : "clip", "curve": 2, "from" : "170,0,175,154", "to" :"0,0,175,154"},
+			
+			{"fr" : 21, "layer" : "trb_logo_team_r", "type" : "visible", "to" : 1},
+ 			{"fr" : 21, "dur" : 15, "layer" : "trb_logo_team_r", "type" : "clip", "curve": 11, "from" : "0,0,0,154", "to" :"0,0,175,154"},
+			{"fr" : 21, "dur" : 6, "layer" : "trb_logo_team_r", "type" : "opacity", "curve": 0, "from" :"0.3", "to" : "0.3"},
+			{"fr" : 35, "layer" : "trb_logo_team_r", "type" : "visible", "to" : 0},
+			
+			{"fr" : 21, "layer" : "trw_logo_team_r", "type" : "visible", "to" : 1},
+ 			{"fr" : 21, "dur" : 15, "layer" : "trw_logo_team_r", "type" : "clip", "curve": 11, "from" : "0,0,0,154", "to" :"0,0,175,154"},
+			{"fr" : 31, "dur" : 23, "layer" : "trw_logo_team_r", "type" : "opacity", "curve": 1, "from" :"1", "to" : "0"},
+			{"fr" : 54, "layer" : "trw_logo_team_r", "type" : "visible", "to" : 0},
+
+	        {"fr" : 0, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 0, "dur" : 12, "layer" : "main_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,1012,112"},
+			
+			{"fr" : 4, "layer" : "main_bkg_tr_a", "type" : "visible", "to" : 1},
+			{"fr" : 4, "dur" : 12, "layer" : "main_bkg_tr_a", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,1012,112"},
+			{"fr" : 4, "dur" : 1, "layer" : "main_bkg_tr_a", "type" : "opacity", "curve": 0, "to" : "0.4"},
+			{"fr" : 16, "layer" : "main_bkg_tr_a", "type" : "visible", "to" : 0},
+			
+			{"fr" : 7 "layer" : "main_bkg_tr_b", "type" : "visible", "to" : 1},
+			{"fr" : 7, "dur" : 12, "layer" : "main_bkg_tr_b", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,1012,112"},
+			{"fr" : 9, "dur" : 7, "layer" : "main_bkg_tr_b", "type" : "opacity", "curve": 2, "from" :"0.7", "to" : "0.4"},
+			{"fr" : 16, "dur" : 6, "layer" : "main_bkg_tr_b", "type" : "clip", "curve": 2, "from" : "0,0,1012,112", "to" :"1012,0,0,112"},
+			{"fr" : 22, "layer" : "main_bkg_tr_b", "type" : "visible", "to" : 0},	
+
+			{"fr" : 35, "layer" : "mask_logo_team_l", "type" : "visible", "to" : 1},
+			
+			{"fr" : 35, "layer" : "logo_team_l", "type" : "visible", "to" : 1},
+			{"fr" : 35, "dur" : 12, "layer" : "logo_team_l", "type" : "move", "curve": 2, "from" : "100, 858", "to" :"300, 858"},
+
+			{"fr" : 35, "layer" : "mask_logo_team_r", "type" : "visible", "to" : 1},
+			
+			{"fr" : 35, "layer" : "logo_team_r", "type" : "visible", "to" : 1},
+			{"fr" : 35, "dur" : 12, "layer" : "logo_team_r", "type" : "move", "curve": 2, "from" : "1250, 858", "to" :"1485, 858"},
+			
+
+			{"fr" : 12, "layer" : "period_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 12, "dur" : 12, "layer" : "period_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,224,42"},
+
+			{"fr" : 17, "layer" : "match_status", "type" : "visible", "to" : 1},
+			{"fr" : 17, "dur" : 12, "layer" : "match_status", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,224,42"},
+
+			{"fr" : 17, "layer" : "name_team_l", "type" : "visible", "to" : 1},
+			{"fr" : 17, "dur" : 20, "layer" : "name_team_l", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,355,112"},
+
+			{"fr" : 25, "layer" : "city_team_l", "type" : "visible", "to" : 1},
+			{"fr" : 25, "dur" : 20, "layer" : "city_team_l", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,355,112"},
+
+			{"fr" : 17, "layer" : "name_team_r", "type" : "visible", "to" : 1},	
+			{"fr" : 17, "dur" : 20, "layer" : "name_team_r", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,355,112"},
+
+			{"fr" : 20, "layer" : "city_team_r", "type" : "visible", "to" : 1},
+			{"fr" : 20, "dur" : 20, "layer" : "city_team_r", "type" : "clip", "curve": 2, "from" : "0,0,0,112", "to" :"0,0,355,112"},
+
+			{"fr" : 18, "layer" : "time_bkg", "type" : "visible", "to" : 1},	
+			{"fr" : 18, "dur" : 20, "layer" : "time_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,224,42"},
+			
+			{"fr" : 26, "layer" : "match_time*", "type" : "visible", "to" : 1},
+			{"fr" : 26, "dur" : 20, "layer" : "match_time*", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,224,42"},
+
+			{"fr" : 8, "layer" : "sity_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 8, "dur" : 1, "layer" : "sity_bkg", "type" : "opacity", "to" : "0.7"},
+			{"fr" : 8, "dur" : 20, "layer" : "sity_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,1012,42"},
+
+			{"fr" : 12, "layer" : "sity_bkg_tr", "type" : "visible", "to" : 1},
+			{"fr" : 12, "dur" : 1, "layer" : "sity_bkg_tr", "type" : "opacity", "to" : "0.4"},
+			{"fr" : 12, "dur" : 17, "layer" : "sity_bkg_tr", "type" : "clip", "curve": 2, "from" : "0,0,0,42", "to" :"0,0,1012,42"},
+			{"fr" : 20, "dur" : 30, "layer" : "sity_bkg_tr", "type" : "clip", "curve": 2, "from" : "0,0,1012,42", "to" :"1012,0,0,42"},
+			{"fr" : 50, "layer" : "sity_bkg_tr", "type" : "visible", "to" : 0},
+					
+			{"fr" : 17, "layer" : "line_l", "type" : "visible", "to" : 1},
+			{"fr" : 17, "dur" : 8, "layer" : "line_l", "type" : "clip", "curve": 2, "from" : "0,112,2,0", "to" :"0,0,2,112"},
+
+			{"fr" : 19, "layer" : "line_c", "type" : "visible", "to" : 1},
+			{"fr" : 19, "dur" : 8, "layer" : "line_c", "type" : "clip", "curve": 2, "from" : "0,0,2,0", "to" :"0,0,2,112"},
+
+			{"fr" : 21, "layer" : "line_r", "type" : "visible", "to" : 1},
+			{"fr" : 21, "dur" : 8, "layer" : "line_r", "type" : "clip", "curve": 2, "from" : "0,112,2,0", "to" :"0,0,2,112"},
+
+			{"fr" : 30, "layer" : "score_l", "type" : "visible", "to" : 1},
+			{"fr" : 30, "dur" : 20, "layer" : "score_l", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 30, "dur" : 20, "layer" : "score_l", "type" : "move", "curve": 2, "from" : "870, 849", "to" : "848, 849"},
+
+			{"fr" : 30, "layer" : "score_r", "type" : "visible", "to" : 1},
+			{"fr" : 30, "dur" : 20, "layer" : "score_r", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 30, "dur" : 20, "layer" : "score_r", "type" : "move", "curve": 2, "from" : "937, 849", "to" : "959, 849"},
+			
+			{"fr" : 50, "layer" : "command", "type" : "signal", "to" : "end-show"}
+			{"fr" : 200, "layer" : "command", "type" : "command", "to" : "hide"},
+			]
+		},
+		{
+			"name" : "hide",
+			"transition" : [
+
+			{"fr" : 0, "layer" : "mask_l", "type" : "visible", "to" : 1},	
+			{"fr" : 0, "dur" : 12, "layer" : "mask_l", "type" : "clip", "curve": 1, "from" : "0,0,0,196", "to" : "0,0,681,196"},
+			{"fr" : 12, "layer" : "mask_l", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "mask_r", "type" : "visible", "to" : 1},
+			{"fr" : 0, "dur" : 12, "layer" : "mask_r", "type" : "clip", "curve": 1, "from" : "681,0,0,196", "to" : "0,0,681,196"},
+			{"fr" : 12, "layer" : "mask_r", "type" : "visible", "to" : 0},
+
+			{"fr" : 12, "layer" : "logo_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "logo_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "name_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "name_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "city_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "city_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "bkg_logo_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "bkg_logo_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "mask_logo_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "logo_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "logo_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "mask_logo_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "period_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "match_status", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "line_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "line_c", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "line_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "score_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "score_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "sity_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "city_team_l", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "city_team_r", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "time_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 12, "layer" : "match_time", "type" : "visible", "to" : 0},
+			
+			{"fr" : 12, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+			{"fr" : 12, "layer" : "command", "type" : "signal", "to" : "delete"},
+			]
+		},
+	]
+} 

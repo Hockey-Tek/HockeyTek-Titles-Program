@@ -1,0 +1,312 @@
+﻿{
+	"template" : "0100",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+
+	"values" : {
+		"$team-l-logo" : "",
+		"$team-l-name1" : "",
+		"$team-l-city" : "",
+		"$league-logo" : "",
+		"$hcoach-l-fname" : "",
+		"$hcoach-l-sname" : "",
+	},
+
+	"script" : "
+		function init()
+		{
+			initSvg();
+			updateText();
+		}
+
+		function initSvg()
+		{
+			curtain_white.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil2']);
+			curtain_white.update = 1;
+
+			curtain_whitet.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil2']);
+			curtain_whitet.update = 1;
+
+			curtain_red.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil1']);
+			curtain_red.update = 1;
+		}
+	
+		function updateText()
+		{
+			name_coach.value = template.values('$hcoach-l-fname') + ' ' +  template.values('$hcoach-l-sname');
+			name_coach.update = 1;
+		}",
+
+	"fonts" : [
+ 		"{path-fonts}AlumniSans-ExtraBoldItalic.ttf",
+		"{path-fonts}AlumniSans-Bold.ttf"		
+ 		],
+
+	"layers" : [
+
+		{
+			"name" : "curtain_white",
+			"type" : "svg",
+			"position" : "190, 122",
+			"size" : "1550, 837",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "curtain_red",
+			"type" : "svg",
+			"position" : "190, 122",
+			"size" : "1550, 837",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "main_bkg",
+			"type" : "svg",
+			"position" : "190, 122",
+			"size" : "1550, 837",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "motion_top",
+			"type" : "svg",
+			"position" : "650, 410",
+			"size" : "513, 146",
+			"path" : "{path}motiontop.svg",
+		},
+		{
+			"name" : "motion_left",
+			"type" : "svg",
+			"position" : "224, 500",
+			"size" : "283, 238",
+			"path" : "{path}motionleft.svg",
+		},
+		{
+			"name" : "motion_bottom",
+			"type" : "svg",
+			"position" : "850, 831",
+			"size" : "513, 126",
+			"path" : "{path}motionbottom.svg",
+		},
+		{
+			"name" : "info_bkg",
+			"type" : "svg",
+			"position" : "280, 312",
+			"size" : "1434, 99",
+			"path" : "{path}infobkg.svg",
+		},
+		{
+			"name" : "league_logo",
+			"type" : "image",
+			"position" : "1400,170",
+			"size" : "200,200",
+			"aspect" : 1,
+			"path" : "$league-logo",
+		},
+		{
+			"name" : "logo_team",
+			"type" : "image",
+			"position" : "360,150",
+			"size" : "140,140",
+			"path" : "$team-l-logo",
+		},
+		{
+			"name" : "title_main",
+			"type" : "text",
+			"position" : "535,130",
+			"size" : "650,130",
+			"value" : "Team Roster",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"case" : 1,
+ 			"font" : "Alumni Sans,130,800,0,1"
+		},
+		{
+			"name" : "name_team",
+			"type" : "text",
+			"position" : "520, 247",
+			"size" : "900,70",
+			"value" : "$team-l-name1",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"case" : "1",
+			"font" : "Alumni Sans,70,800,0,1"
+		},
+		{
+			"name" : "title_coach",
+			"type" : "text",
+			"position" : "454, 320",
+			"size" : "250,40",
+			"value" : "HEAD COACH",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"font" : "Alumni Sans,40,800,0,1"
+		},
+		{
+			"name" : "name_coach",
+			"type" : "text",
+			"position" : "442, 350",
+			"size" : "1060,75",
+			"value" : "",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"case" : "1",
+			"scaled" : "1,0",
+			"font" : "Alumni Sans,75,800,0,1"
+		},
+		{
+			"name" : "title_g",
+			"type" : "text",
+			"position" : "432, 438",
+			"size" : "270,32",
+			"value" : "GOALTENDERS",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"font" : "Alumni Sans,50,700,0,1"
+		},
+		{
+			"name" : "title_d",
+			"type" : "text",
+			"position" : "410, 561",
+			"size" : "270,32",
+			"value" : "DEFENSEMEN",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"font" : "Alumni Sans,50,700,0,1"
+		},
+		{
+			"name" : "title_f",
+			"type" : "text",
+			"position" : "1105, 438",
+			"size" : "270,32",
+			"value" : "FORWARDS",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"font" : "Alumni Sans,50,700,0,1"
+		},
+		{
+			"name" : "curtain_whitet",
+			"type" : "svg",
+			"position" : "190, 122",
+			"size" : "1550, 837",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "mask_around",
+			"type" : "mask",
+			"position" : "186, 122",
+			"size" : "1558,837",
+			"path" : "{path}maskaround.svg",
+		}
+	],
+
+	"commands" : [
+		{
+
+			"name" : "show",
+			"transition" : [
+
+			{"fr" : 0  "layer" : "command", "type" : "script", "to" : "init()"},
+			{"fr" : 0, "layer" : "mask_around", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "layer" : "curtain_white", "type" : "visible", "to" : 1},
+			{"fr" : 0, "dur" : 20, "layer" : "curtain_white", "type" : "move", "curve": 2, "from" : "-1360, 122", "to" : "190, 122"},
+			{"fr" : 0, "dur" : 20, "layer" : "curtain_white", "type" : "clip", "curve": 2, "from" : "1550,0,1550, 837", "to" :"0,0,1550,837"},
+
+			{"fr" : 10, "layer" : "curtain_red", "type" : "visible", "to" : 1},
+			{"fr" : 10, "dur" : 15, "layer" : "curtain_red", "type" : "move", "curve": 2, "from" : "-1360, 122", "to" : "190, 122"},
+			{"fr" : 10, "dur" : 15, "layer" : "curtain_red", "type" : "clip", "curve": 2, "from" : "1550,0,1550, 837", "to" :"0,0,1550,837"},
+
+			{"fr" : 18, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 18, "dur" : 15, "layer" : "main_bkg", "type" : "move", "curve": 2, "from" : "1740, 122", "to" : "190, 122"},
+			{"fr" : 18, "dur" : 15, "layer" : "main_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,837", "to" :"0,0,1550,837"},
+
+			{"fr" : 23, "layer" : "curtain_whitet", "type" : "visible", "to" : 1},
+			{"fr" : 23, "dur" : 10, "layer" : "curtain_whitet", "type" : "move", "curve": 2, "from" : "1740, 122", "to" : "190, 122"}
+			{"fr" : 23, "dur" : 10, "layer" : "curtain_whitet", "type" : "clip", "curve": 2, "from" : "0,0,0,837", "to" :"0,0,1550,837"},
+
+			{"fr" : 25, "layer" : "info_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 25, "dur" : 20, "layer" : "info_bkg", "type" : "move", "curve": 2, "from" : "-1154, 312", "to" : "280, 312"}
+			{"fr" : 25, "dur" : 20, "layer" : "info_bkg", "type" : "clip", "curve": 2, "from" : "1434,0,1434,99", "to" :"0,0,1434,99"},
+
+			{"fr" : 30, "layer" : "motion_top", "type" : "visible", "to" : 1},
+			{"fr" : 30, "dur" : 3, "layer" : "motion_top", "type" : "opacity", "curve": 0, "from" :"0", "to" : "0.5"},
+			{"fr" : 30, "dur" : 1470, "layer" : "motion_top", "type" : "move", "curve": 0, "from" : "650, 410", "to" : "950, 410"},
+
+			{"fr" : 30, "layer" : "motion_left", "type" : "visible", "to" : 1},
+			{"fr" : 30, "dur" : 3, "layer" : "motion_left", "type" : "opacity", "curve": 0, "from" :"0", "to" : "0.5"},
+			{"fr" : 30, "dur" : 1470, "layer" : "motion_left", "type" : "move", "curve": 0, "from" : "224, 500", "to" : "250, 350"},
+
+			{"fr" : 30, "layer" : "motion_bottom", "type" : "visible", "to" : 1},
+			{"fr" : 30, "dur" : 3, "layer" : "motion_bottom", "type" : "opacity", "curve": 0, "from" :"0", "to" : "0.5"},
+			{"fr" : 30, "dur" : 1470, "layer" : "motion_bottom", "type" : "move", "curve": 0, "from" : "850, 831", "to" : "600, 831"},
+
+			{"fr" : 32, "layer" : "league_logo", "type" : "visible", "to" : 1},
+			{"fr" : 32, "dur" : 30, "layer" : "league_logo", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+
+			{"fr" : 32, "layer" : "logo_team", "type" : "visible", "to" : 1},
+			{"fr" : 32, "dur" : 30, "layer" : "logo_team", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+
+			{"fr" : 32, "layer" : "title_main", "type" : "visible", "to" : 1},
+			{"fr" : 32, "dur" : 20, "layer" : "title_main", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 32, "dur" : 20, "layer" : "title_main", "type" : "move", "curve": 2, "from" : "435,130", "to" : "535,130"},
+
+			{"fr" : 34, "layer" : "name_team", "type" : "visible", "to" : 1},
+			{"fr" : 34, "dur" : 20, "layer" : "name_team", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 34, "dur" : 20, "layer" : "name_team", "type" : "move", "curve": 2, "from" : "420, 240", "to" : "520, 240"},
+
+			{"fr" : 39, "layer" : "title_coach", "type" : "visible", "to" : 1},
+			{"fr" : 39, "dur" : 20, "layer" : "title_coach", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 39, "dur" : 20, "layer" : "title_coach", "type" : "move", "curve": 2, "from" : "354, 315", "to" : "454, 315"},
+
+			{"fr" : 44, "layer" : "name_coach", "type" : "visible", "to" : 1},
+			{"fr" : 44, "dur" : 20, "layer" : "name_coach", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+			{"fr" : 44, "dur" : 20, "layer" : "name_coach", "type" : "move", "curve": 2, "from" : "342, 340", "to" : "442, 340"},
+
+			{"fr" : 50, "layer" : "title_g", "type" : "visible", "to" : 1},
+			{"fr" : 50, "dur" : 20, "layer" : "title_g", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+
+			{"fr" : 50, "layer" : "title_d", "type" : "visible", "to" : 1},
+			{"fr" : 50, "dur" : 20, "layer" : "title_d", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+
+			{"fr" : 50, "layer" : "title_f", "type" : "visible", "to" : 1},
+			{"fr" : 50, "dur" : 20, "layer" : "title_f", "type" : "opacity", "curve": 0, "from" :"0", "to" : "1"},
+
+			{"fr" : 31, "dur" : 18, "layer" : "curtain_whitet", "type" : "opacity", "curve": 0, "from" :"1", "to" : "0"},
+			{"fr" : 31, "dur" : 18, "layer" : "curtain_whitet", "type" : "move", "curve": 2, "from" : "190, 122", "to" : "-1360, 122"}
+			{"fr" : 31, "dur" : 18, "layer" : "curtain_whitet", "type" : "clip", "curve": 2, "from" : "0,0,1550,837", "to" :"1550,0,1550, 837"},
+
+			{"fr" : 110, "layer" : "command", "type" : "signal", "to" : "end-show"},
+	
+			]
+		},
+
+		{
+			"name" : "hide",
+			"transition" : [
+	
+			{"fr" : 0, "layer" : "mask_around", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "curtain_white", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "curtain_red", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "curtain_whitet", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "info_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "motion_top", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "motion_left", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "motion_bottom", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "league_logo", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "logo_team", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "title_main", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "name_team", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "title_coach", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "name_coach", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "title_g", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "title_d", "type" : "visible", "to" : 0},
+			{"fr" : 0, "layer" : "title_f", "type" : "visible", "to" : 0},
+
+			{"fr" : 1, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+			{"fr" : 2, "layer" : "command", "type" : "signal", "to" : "delete"}
+
+			]
+		},
+	
+	]
+} 

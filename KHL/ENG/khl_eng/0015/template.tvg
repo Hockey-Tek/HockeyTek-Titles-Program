@@ -1,0 +1,192 @@
+{
+	"template" : "0015",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"origin" : "0, 0",
+	"isolate": 1,
+
+	"values" : {
+		"$team-l-color1" : "",
+		"$team-l-color2" : "",
+		"$team-l-logo" : ""
+	},
+
+	"script": "",
+
+	"fonts" : [
+		"{path-fonts}MatchTV-Medium.ttf",
+		"{path-fonts}MatchTV-Bold.ttf",	
+		"{path-fonts}MatchTV-Reg.ttf"	
+ 		],
+
+	"layers" : [
+
+		{
+			"name" : "to_bkg_1",
+			"type" : "solid",
+			"position" : "123,73",
+			"size" : "226,103",
+			"color" : "$team-l-color1",
+			
+		},
+		{
+			"name" : "logoT",
+			"type" : "image",
+			"position" : "141,27",
+			"size" : "190,190",
+			"path" : "$team-l-logo"
+		},
+		{
+			"name" : "to__bkg_2",
+			"type" : "solid",
+			"position" : "123,73",
+			"size" : "226,103",
+			"color" : "$team-l-color2",
+		},
+		{
+			"name" : "to_tr_1",
+			"type" : "solid",
+			"position" : "123,73",
+			"size" : "226,103",
+			"color" : "255,255,255",
+			
+		},
+		{
+			"name" : "to_tr_2",
+			"type" : "solid",
+			"position" : "123,73",
+			"size" : "226,103",
+			"color" : "255,255,255",
+			
+		},
+		{
+			"name" : "to_tr_3",
+			"type" : "solid",
+			"position" : "123,73",
+			"size" : "226,103",
+			"color" : "255,255,255",	
+		},
+		{
+			"name" : "text_bkg",
+			"type" : "solid",
+			"position" : "123,177",
+			"size" : "226,51",
+			"color" : "#000000",
+		},
+		{
+			"name" : "to_text",
+			"type" : "text",
+			"position" : "123,177",
+			"size" : "226,51",
+			"value" : "TIME OUT",
+			"color" : "255,255,255",
+			"align" : "0,0",
+            "font" : "MatchTV,34,800,0,0"
+		},
+		{
+			"name" : "trans_1",
+			"type" : "solid",
+			"position" : "123,177",
+			"size" : "226,51",
+			"color" : "#959595"
+		},
+		{
+			"name" : "trans_2",
+			"type" : "solid",
+			"position" : "123,177",
+			"size" : "226,51",
+			"color" : "#FFFFFF"
+		},
+		{
+			"name" : "trans_3",
+			"type" : "solid",
+			"position" : "123,177",
+			"size" : "226,51",
+			"color" : "#FFFFFF"
+		},				
+	],
+
+	"commands" : [
+		{
+			"name" : "show",
+			"transition" : [
+			{"fr" : 0, "layer" : "to_bkg_1", "type" : "visible", "to" :1},
+			{"fr" : 0, "dur" : 12, "layer" : "to_bkg_1", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,226,103"},
+			{"fr" : 0, "layer" : "to__bkg_2", "type" : "visible", "to" :1},			
+			{"fr" : 0, "dur" : 1500, "layer" : "to__bkg_2", "type" : "clip", "curve": 0, "from" : "0,98,0,103", "to" :"0,98,226,103"},
+  
+			{"fr" : 3, "layer" : "to_tr_1", "type" : "visible", "to" :1},
+			{"fr" : 3, "dur" : 12, "layer" : "to_tr_1", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,226,103"},
+			{"fr" : 13, "dur" : 12, "layer" : "to_tr_1", "type" : "clip", "curve": 2, "from" : "0,0,226,103", "to" :"226,0,226,103"},
+			 {"fr" : 25, "layer" : "to_tr_1", "type" : "visible", "to" :0},
+				
+			{"fr" : 19, "layer" : "to_tr_2", "type" : "visible", "to" :1},
+			{"fr" : 19, "dur" : 1, "layer" : "to_tr_2", "type" : "opacity", "to" : 0.4},
+			{"fr" : 19, "dur" : 12, "layer" : "to_tr_2", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,226,103"},
+			{"fr" : 31, "dur" : 12, "layer" : "to_tr_2", "type" : "clip", "curve": 2, "from" : "0,0,226,103", "to" :"226,0,226,103"},
+			{"fr" : 43, "layer" : "to_tr_2", "type" : "visible", "to" :0},
+  
+			{"fr" : 24, "layer" : "to_tr_1", "type" : "visible", "to" :1},
+			{"fr" : 24, "dur" : 1, "layer" : "to_tr_1", "type" : "opacity", "to" : 0.4},
+			{"fr" : 24, "dur" : 14, "layer" : "to_tr_1", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,226,103"},
+			{"fr" : 37, "dur" : 18, "layer" : "to_tr_1", "type" : "clip", "curve": 2, "from" : "0,0,226,103", "to" :"226,0,226,103"},
+			{"fr" : 55, "layer" : "to_tr_1", "type" : "visible", "to" :0},
+		  
+
+			{"fr" : 3, "layer" : "trans_1", "type" : "visible", "to" : 1},
+	    	{"fr" : 3, "dur" : 12, "layer" : "trans_1", "type" : "clip", "curve": 2, "from" : "0,0,0,51", "to" :"0,0,226,51"},	
+	    	{"fr" : 11, "dur" : 12, "layer" : "trans_1", "type" : "clip", "curve": 2, "from" : "0,0,226,51", "to" :"226,0,0,51"},	
+			{"fr" : 23, "layer" : "trans_1", "type" : "visible", "to" : 0},
+
+			{"fr" : 19, "layer" : "trans_2", "type" : "visible", "to" : 1},
+			{"fr" : 19, "dur" : 1, "layer" : "trans_2", "type" : "opacity", "to" : 0.5},
+	    	{"fr" : 19, "dur" : 12, "layer" : "trans_2", "type" : "clip", "curve": 2, "from" : "0,0,0,51", "to" :"0,0,226,51"},	
+	    	{"fr" : 30, "dur" : 12, "layer" : "trans_2", "type" : "clip", "curve": 2, "from" : "0,0,226,51", "to" :"226,0,0,51"},	    
+			{"fr" : 43, "layer" : "trans_1", "type" : "visible", "to" : 0},
+
+			{"fr" : 25, "layer" : "trans_3", "type" : "visible", "to" : 1},
+			{"fr" : 24, "dur" : 1, "layer" : "trans_3", "type" : "opacity", "to" : 0.5},
+	    	{"fr" : 24, "dur" : 12, "layer" : "trans_3", "type" : "clip", "curve": 2, "from" : "0,0,0,51", "to" :"0,0,226,51"},	
+	    	{"fr" : 36, "dur" : 12, "layer" : "trans_3", "type" : "clip", "curve": 2, "from" : "0,0,226,51", "to" :"226,0,0,51"},	
+
+			{"fr" : 3, "layer" : "to_text", "type" : "visible", "to" :1},
+			{"fr" : 3, "dur" : 16, "layer" : "to_text", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,226,103"},
+  
+			{"fr" : 0, "layer" : "text_bkg", "type" : "visible", "to" : 1},
+  	    	{"fr" : 0, "dur" : 16, "layer" : "text_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,51", "to" :"0,0,226,51"},	
+			
+			{"fr" : 15, "layer" : "logoT", "type" : "visible", "to" :1},
+			{"fr" : 15, "dur" : 1, "layer" : "logoT", "type" : "clip", "to" :"0,46,190,103"},
+			{"fr" : 15, "dur" : 1, "layer" : "logoT", "type" : "opacity", "to" : 1},		
+  
+			{"fr" : 48, "layer" : "command", "type" : "signal", "to" : "end-cmd"},
+			{"fr" : 1525, "layer" : "command", "type" : "command", "to" : "hide"}
+				
+			]
+		},
+
+		{
+			"name" : "hide",
+			"transition" : [
+
+			{"fr" : 0, "dur" : 20, "layer" : "to_bkg_1", "type" : "clip", "curve": 1, "from" : "0,0,226,103", "to" :"0,0,0,103"},
+			{"fr" : 20, "layer" : "to_bkg_1", "type" : "visible", "to" :0},	
+			{"fr" : 0, "dur" : 20, "layer" : "to__bkg_2", "type" : "clip", "curve": 1, "from" : "0,98,226,103", "to" :"0,98,0,103"},
+			{"fr" : 20, "layer" : "to__bkg_2", "type" : "visible", "to" :0},			  
+			{"fr" : 0, "dur" : 20, "layer" : "logoT", "type" : "clip", "curve": 1, "from" : "0,46,190,103", "to" :"0,46,0,103"},
+			{"fr" : 20, "layer" : "logoT", "type" : "visible", "to" :0},
+
+			{"fr" : 0, "dur" : 20, "layer" : "text_bkg", "type" : "clip", "curve": 1, "from" : "0,0,226,103", "to" :"0,0,0,103"},
+			{"fr" : 10, "layer" : "text_bkg", "type" : "visible", "to" : 0},
+
+					  
+			{"fr" : 0, "dur" : 20, "layer" : "to_text", "type" : "clip", "curve": 1, "from" : "0,0,226,103", "to" :"0,0,0,103"},
+			{"fr" : 20, "layer" : "to_text", "type" : "visible", "to" :0},		
+
+			{"fr" : 20, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+
+			]
+		},
+	
+	]
+} 

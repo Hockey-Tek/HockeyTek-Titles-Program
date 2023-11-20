@@ -1,0 +1,140 @@
+{
+	"template" : "0007",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"isolate": 1,
+
+	"values" : 
+	{
+		"$powerplay-time" : "00:00",		
+	},
+
+	"fonts" : 
+	[
+		"{path-fonts}MatchTV-Medium.ttf",
+		"{path-fonts}MatchTV-Bold.ttf",
+		"{path-fonts}MatchTV-Reg.ttf"
+	],
+
+	"layers" : 
+	[
+			{
+				"name": "info_bkg",
+				"type": "solid",
+				"position": "349,73",
+				"size": "95,43",
+				"color": "#959595"
+			},
+			{
+				"name": "title",
+				"type": "text",
+				"position": "349,73",
+				"size": "95,43",
+				"value": "4on4",
+				"color": "#ffffff",
+				"align": "0,0",
+				"font": "MatchTV,27,500,0,0"
+			},
+			{
+				"name": "time_bkg",
+				"type": "solid",
+				"position": "349,116",
+				"size": "95,60",
+				"color": "#ffce00"
+			},
+			{
+				"name": "time",
+				"type": "text",
+				"position": "349,116",
+				"size": "95,60",
+				"value": "$powerplay-time",
+				"color": "#000000",
+				"align": "0,0",
+				"font": "MatchTV,35,800,0,0"
+			},
+			{
+				"name" : "trans_1",
+				"type" : "solid",
+				"position" : "349,73",
+				"size" : "95,103",
+				"color" : "#FFFFFF"
+			},
+			{
+				"name" : "trans_2",
+				"type" : "solid",
+				"position" : "349,73",
+				"size" : "95,103",
+				"color" : "#FFFFFF"
+			},
+			{
+				"name" : "trans_3",
+				"type" : "solid",
+				"position" : "349,73",
+				"size" : "95,103",
+				"color" : "#FFFFFF"
+			},		
+	],
+
+			"commands" : [
+
+			{
+					"name": "show",
+					"transition": [
+				
+						{ "fr": 0, "layer": "info_bkg", "type": "visible", "to": 1 },
+						{"fr" : 0, "dur" : 12, "layer" : "info_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,43", "to" :"0,0,95,43"},	
+						
+						{ "fr": 0, "layer": "time_bkg", "type": "visible", "to": 1 },
+						{"fr" : 0, "dur" : 12, "layer" : "time_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,60", "to" :"0,0,95,60"},	
+
+						{ "fr": 20, "layer": "title", "type": "visible", "to": 1 },
+						{ "fr": 20, "layer": "time", "type": "visible", "to": 1 },
+						{ "fr": 20, "layer": "time", "type": "visible", "to": 1 },
+
+						{"fr" : 3, "layer" : "trans_1", "type" : "visible", "to" : 1},
+						{"fr" : 3, "dur" : 12, "layer" : "trans_1", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,95,103"},	
+						{"fr" : 11, "dur" : 12, "layer" : "trans_1", "type" : "clip", "curve": 2, "from" : "0,0,95,103", "to" :"95,0,0,103"},	
+						{"fr" : 23, "layer" : "trans_1", "type" : "visible", "to" : 0},
+		
+						{"fr" : 19, "layer" : "trans_2", "type" : "visible", "to" : 1},
+						{"fr" : 19, "dur" : 1, "layer" : "trans_2", "type" : "opacity", "to" : 0.5},
+						{"fr" : 19, "dur" : 12, "layer" : "trans_2", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,95,103"},	
+						{"fr" : 30, "dur" : 12, "layer" : "trans_2", "type" : "clip", "curve": 2, "from" : "0,0,95,103", "to" :"95,0,0,103"},	    
+						{"fr" : 43, "layer" : "trans_2", "type" : "visible", "to" : 0},
+		
+						{"fr" : 25, "layer" : "trans_3", "type" : "visible", "to" : 1},
+						{"fr" : 24, "dur" : 1, "layer" : "trans_3", "type" : "opacity", "to" : 0.5},
+						{"fr" : 24, "dur" : 12, "layer" : "trans_3", "type" : "clip", "curve": 2, "from" : "0,0,0,103", "to" :"0,0,95,103"},	
+						{"fr" : 36, "dur" : 12, "layer" : "trans_3", "type" : "clip", "curve": 2, "from" : "0,0,95,103", "to" :"95,0,0,103"},	
+
+						{ "fr": 50, "layer": "command", "type": "signal", "to": "end-show" }
+
+					]
+				},
+				{
+					"name": "hide",
+					"transition": [
+						{"fr" : 0, "layer" : "trans_1", "type" : "visible", "to" : 0},
+						{"fr" : 0, "layer" : "trans_2", "type" : "visible", "to" : 0},	
+						{"fr" : 0, "layer" : "trans_3", "type" : "visible", "to" : 0},
+
+						{"fr" : 0, "dur" : 12, "layer" : "info_bkg", "type" : "clip", "curve": 1, "from" : "0,0,95,103", "to" :"0,0,0,103"},	
+						{"fr" : 12, "layer" : "info_bkg", "type" : "visible", "to" : 0},
+
+						{"fr" : 0, "dur" : 12, "layer" : "title", "type" : "clip", "curve": 1, "from" : "0,0,95,103", "to" :"0,0,0,103"},	
+						{"fr" : 12, "layer" : "title", "type" : "visible", "to" : 0},
+
+						{"fr" : 0, "dur" : 12, "layer" : "time_bkg", "type" : "clip", "curve": 1, "from" : "0,0,95,103", "to" :"0,0,0,103"},	
+						{"fr" : 12, "layer" : "time_bkg", "type" : "visible", "to" : 0},
+
+						{"fr" : 0, "dur" : 12, "layer" : "time", "type" : "clip", "curve": 1, "from" : "0,0,95,103", "to" :"0,0,0,103"},	
+						{"fr" : 12, "layer" : "time", "type" : "visible", "to" : 0},
+
+						{ "fr": 50, "layer": "command", "type": "signal", "to": "end-hide" },
+
+					]
+				},
+			]
+}
+
+

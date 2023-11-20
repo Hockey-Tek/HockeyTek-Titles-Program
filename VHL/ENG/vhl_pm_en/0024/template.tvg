@@ -1,0 +1,1912 @@
+﻿{
+	"template" : "0024",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"isolate": 0,
+	"origin" : "0,0"
+
+	"values" : {
+		"$team-l-color1" : "",
+		"$team-l-name1" : "",
+		"$hcoach-l-fname" : "",
+		"$hcoach-l-sname" : "",
+		"$team-l-logo" : "", 
+		"$league-logo" : "",
+
+		"$player-lg11-fname" : "", 
+		"$player-lg11-sname" : "",
+		"$player-lg11-number" : "",
+		"$player-lg11-flag" : "",
+
+		"$player-lg12-fname" : "", 
+		"$player-lg12-sname" : "",
+		"$player-lg12-number" : "",
+		"$player-lg12-flag" : "",
+
+		"$player-lf11-fname" : "", 
+		"$player-lf11-sname" : "",
+		"$player-lf11-number" : "",
+		"$player-lf11-flag" : "",
+
+		"$player-lf12-fname" : "", 
+		"$player-lf12-sname" : "",
+		"$player-lf12-number" : "",
+		"$player-lf12-flag" : "",
+
+		"$player-lf13-fname" : "", 
+		"$player-lf13-sname" : "",
+		"$player-lf13-number" : "",
+		"$player-lf13-flag" : "",
+
+		"$player-lf21-fname" : "", 
+		"$player-lf21-sname" : "",
+		"$player-lf21-number" : "",
+		"$player-lf21-flag" : "",
+
+		"$player-lf22-fname" : "", 
+		"$player-lf22-sname" : "",
+		"$player-lf22-number" : "",
+		"$player-lf22-flag" : "",
+
+		"$player-lf23-fname" : "", 
+		"$player-lf23-sname" : "",
+		"$player-lf23-number" : "",
+		"$player-lf23-flag" : "",
+
+		"$player-lf31-fname" : "", 
+		"$player-lf31-sname" : "",
+		"$player-lf31-number" : "",
+		"$player-lf31-flag" : "",
+
+		"$player-lf32-fname" : "", 
+		"$player-lf32-sname" : "",
+		"$player-lf32-number" : "",
+		"$player-lf32-flag" : "",
+
+		"$player-lf33-photo" : "",
+		"$player-lf33-fname" : "", 
+		"$player-lf33-sname" : "",
+		"$player-lf33-number" : "",
+		"$player-lf33-flag" : "",
+
+		"$player-lf41-fname" : "", 
+		"$player-lf41-sname" : "",
+		"$player-lf41-number" : "",
+		"$player-lf41-flag" : "",
+
+		"$player-lf42-fname" : "", 
+		"$player-lf42-sname" : "",
+		"$player-lf42-number" : "",
+		"$player-lf42-flag" : "",
+
+		"$player-lf43-fname" : "", 
+		"$player-lf43-sname" : "",
+		"$player-lf43-number" : "",
+		"$player-lf43-flag" : "",
+
+		"$player-ld11-fname" : "", 
+		"$player-ld11-sname" : "",
+		"$player-ld11-number" : "",
+		"$player-ld11-flag" : "",
+
+		"$player-ld12-fname" : "", 
+		"$player-ld12-sname" : "",
+		"$player-ld12-number" : "",
+		"$player-ld12-flag" : "",
+
+		"$player-ld21-fname" : "", 
+		"$player-ld21-sname" : "",
+		"$player-ld21-number" : "",
+		"$player-ld21-flag" : "",
+
+		"$player-ld22-fname" : "", 
+		"$player-ld22-sname" : "",
+		"$player-ld22-number" : "",
+		"$player-ld22-flag" : "",
+
+		"$player-ld31-fname" : "", 
+		"$player-ld31-sname" : "",
+		"$player-ld31-number" : "",
+		"$player-ld31-flag" : "",
+
+		"$player-ld32-fname" : "", 
+		"$player-ld32-sname" : "",
+		"$player-ld32-number" : "",
+		"$player-ld32-flag" : "",
+
+		"$player-ld41-fname" : "", 
+		"$player-ld41-sname" : "",
+		"$player-ld41-number" : "",
+		"$player-ld41-flag" : "",
+
+		"$player-ld42-fname" : "", 
+		"$player-ld42-sname" : "",
+		"$player-ld42-number" : "",
+		"$player-ld42-flag" : "",
+	},
+	"script": "
+	function init()
+	{
+		var names = [];
+		coach_name.value = template.values('$hcoach-l-fname') + ' '  + template.values('$hcoach-l-sname');
+		coach_name.update = 1;
+
+		player_g1_name.value = template.values('$player-lg11-fname') + ' ' + template.values('$player-lg11-sname');
+		player_g1_name.update = 1;
+		player_g2_name.value = template.values('$player-lg12-fname') + ' ' + template.values('$player-lg12-sname');
+		player_g2_name.update = 1;
+
+		player_f1_name.value = template.values('$player-lf11-fname') + ' ' + template.values('$player-lf11-sname');
+		player_f1_name.update = 1;
+		player_f2_name.value = template.values('$player-lf12-fname') + ' ' + template.values('$player-lf12-sname');
+		player_f2_name.update = 1;
+		player_f3_name.value = template.values('$player-lf13-fname') + ' ' + template.values('$player-lf13-sname');
+		player_f3_name.update = 1;
+		player_f4_name.value = template.values('$player-lf21-fname') + ' ' + template.values('$player-lf21-sname');
+		player_f4_name.update = 1;
+		player_f5_name.value = template.values('$player-lf22-fname') + ' ' + template.values('$player-lf22-sname');
+		player_f5_name.update = 1;
+		player_f6_name.value = template.values('$player-lf23-fname') + ' ' + template.values('$player-lf23-sname');
+		player_f6_name.update = 1;
+		player_f7_name.value = template.values('$player-lf31-fname') + ' ' + template.values('$player-lf31-sname');
+		player_f7_name.update = 1;
+		player_f8_name.value = template.values('$player-lf32-fname') + ' ' + template.values('$player-lf32-sname');
+		player_f8_name.update = 1;
+		player_f9_name.value = template.values('$player-lf33-fname') + ' ' + template.values('$player-lf33-sname');
+		player_f9_name.update = 1;
+		player_f10_name.value = template.values('$player-lf41-fname') + ' ' + template.values('$player-lf41-sname');
+		player_f10_name.update = 1;
+		player_f11_name.value = template.values('$player-lf42-fname') + ' ' + template.values('$player-lf42-sname');
+		player_f11_name.update = 1;
+		player_f12_name.value = template.values('$player-lf43-fname') + ' ' + template.values('$player-lf43-sname');
+		player_f12_name.update = 1;
+
+		player_d1_name.value = template.values('$player-ld11-fname') + ' ' + template.values('$player-ld11-sname');
+		player_d1_name.update = 1;
+		player_d2_name.value = template.values('$player-ld12-fname') + ' ' + template.values('$player-ld12-sname');
+		player_d2_name.update = 1;
+		player_d3_name.value = template.values('$player-ld21-fname') + ' ' + template.values('$player-ld21-sname');
+		player_d3_name.update = 1;
+		player_d4_name.value = template.values('$player-ld22-fname') + ' ' + template.values('$player-ld22-sname');
+		player_d4_name.update = 1;
+		player_d5_name.value = template.values('$player-ld31-fname') + ' ' + template.values('$player-ld31-sname');
+		player_d5_name.update = 1;
+		player_d6_name.value = template.values('$player-ld32-fname') + ' ' + template.values('$player-ld32-sname');
+		player_d6_name.update = 1;
+		player_d7_name.value = template.values('$player-ld41-fname') + ' ' + template.values('$player-ld41-sname');
+		player_d7_name.update = 1;
+		player_d8_name.value = template.values('$player-ld42-fname') + ' ' + template.values('$player-ld42-sname');
+		player_d8_name.update = 1;
+
+
+		names[0] = template.values('$player-lg11-fname').length > 0;
+		names[1] = template.values('$player-lg12-fname').length > 0;
+
+		names[2] = template.values('$player-lf11-fname').length > 0;
+		names[3] = template.values('$player-lf12-fname').length > 0;
+		names[4] = template.values('$player-lf13-fname').length > 0;
+		names[5] = template.values('$player-lf21-fname').length > 0;
+		names[6] = template.values('$player-lf22-fname').length > 0;
+		names[7] = template.values('$player-lf23-fname').length > 0;
+		names[8] = template.values('$player-lf31-fname').length > 0;
+		names[9] = template.values('$player-lf32-fname').length > 0;
+		names[10] = template.values('$player-lf33-fname').length > 0;
+		names[11] = template.values('$player-lf41-fname').length > 0;
+		names[12] = template.values('$player-lf42-fname').length > 0;
+		names[13] = template.values('$player-lf43-fname').length > 0;
+
+		names[14] = template.values('$player-ld11-fname').length > 0;
+		names[15] = template.values('$player-ld12-fname').length > 0;
+		names[16] = template.values('$player-ld21-fname').length > 0;
+		names[17] = template.values('$player-ld22-fname').length > 0;
+		names[18] = template.values('$player-ld31-fname').length > 0;
+		names[19] = template.values('$player-ld32-fname').length > 0;
+		names[20] = template.values('$player-ld41-fname').length > 0;
+		names[21] = template.values('$player-ld42-fname').length > 0;
+
+		var transitions = [];
+		var transitionsHide = [];
+		var cnt = 0;
+		var cnth = 0;
+		var x = 0;
+		var y = 0;
+		var f = 0;
+		var s = 0;
+
+		for(g = 1; g < 23; g++)
+		{
+			var player = '';
+			if(g < 3)
+			{
+ 				player = 'player_g' + g;
+			}
+			else if(g < 15)
+			{
+				player = 'player_f' + (g - 2);
+				if(s == 0)
+				{
+					s = 1;
+					x = 693;
+					y = 0;
+				}
+			}
+			else
+			{
+				player = 'player_d' + (g - 14);
+				if(s == 1)
+				{
+					s = 2;
+					x = -39;
+					y = 168;
+				}
+			}
+
+			if(names[g - 1])
+			{
+				transitions[cnt++] = {fr : 0, dur : 1, layer : player + '_curtain1', type : 'move', from : '', to :  (349 + x) +','+ (446 + y)};
+				transitions[cnt++] = {fr : 0, dur : 1, layer : player + '_curtain2', type : 'move', from : '', to :  (349 + x) +','+  (446 + y)};
+				transitions[cnt++] = {fr : 0, dur : 1, layer : player + '_bkg', type : 'move', from : '', to :  (349 + x) +','+ (446 + y)};
+				transitions[cnt++] = {fr : 0, dur : 1, layer : player + '_line', type : 'move', from : '', to :  (422 + x) +','+  (480 + y)};
+				transitions[cnt++] = {fr : 0, dur : 1, layer : player + '_number', type : 'move', from : '', to :  (354 + x) +','+(446 + y)};
+				transitions[cnt++] = {fr : 48 + f, layer : player + '_curtain1', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 48 + f, dur : 12, layer :  player + '_curtain1', type : 'ptransform', curve:2, from : '0,36 10,0 10,0 0,36', to : '0,36 10,0 84,0 74,36'},
+				transitions[cnt++] = {fr : 60 + f, layer : player + '_number', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 60 + f, layer : player + '_curtain2', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 60 + f, layer : player + '_bkg', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 60 + f, dur : 20, layer :  player + '_curtain1', type : 'ptransform', curve:2, from : '0,36 10,0 84,0 74,36', to : '74,36 84,0 84,0 74,36'},
+				transitions[cnt++] = {fr : 65 + f, dur : 20, layer :  player + '_curtain2', type : 'ptransform', curve:2, from : '0,36 10,0 84,0 74,36', to : '74,36 84,0 84,0 74,36'},
+				transitions[cnt++] = {fr : 60 + f, layer : player + '_name', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 60 + f, dur : 50, layer :  player + '_name', type : 'clip', curve:2, from : '400,0,400,36', to : '0,0,400,36'},
+				transitions[cnt++] = {fr : 60 + f, dur : 60, layer :  player + '_name', type : 'move', curve:2, from : (42 + x) + ',' + (446 + y), to : (442 + x) + ',' + (446 + y)},
+				transitions[cnt++] = {fr : 90 + f, layer : player + '_curtain1', type : 'visible', to :  0};
+				transitions[cnt++] = {fr : 90 + f, layer : player + '_curtain2', type : 'visible', to : 0};
+				transitions[cnt++] = {fr : 80 + f, layer : player + '_line', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 80 + f, dur : 35, layer :  player + '_line', type : 'clip', curve:2, from : '0,0,0,2', to : '0,0,493,2'},
+				transitions[cnt++] = {fr : 95 + f, layer : player + '_flag', type : 'visible', to : 1};
+				transitions[cnt++] = {fr : 95 + f, dur : 20, layer :  player + '_flag', type : 'opacity', from : 0, to : 1},
+				transitions[cnt++] = {fr : 95 + f, dur : 20, layer :  player + '_flag', type : 'move', curve:2, from : (760 + x)+','+(450 + y), to : (861 + x)+','+(450 + y)},
+
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_curtain1', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_curtain2', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_bkg', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_line', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_number', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_flag', type : 'visible', to : 0};
+				transitionsHide[cnth++] = {fr : 25, layer : player + '_name', type : 'visible', to : 0};
+
+				x += -12;
+				y += 42;
+ 				f += 2;
+			}
+		}
+
+		var obj = {name: 'show-main', transition : transitions};
+		template.addTransition('show-main', obj);
+
+		obj = {name: 'hide', transition : transitionsHide};
+		template.addTransition('hide', obj);
+	}
+"
+
+	"fonts" : [
+		"{path-fonts}Parimatch-Regular.ttf",
+		"{path-fonts}Parimatch-Bold.ttf",
+		"{path-fonts}Parimatch-Medium.ttf",
+		"{path-fonts}Parimatch-Light.ttf",
+
+
+ 		],
+
+	"layers" : [
+		{
+			"name" : "main_bkg",
+			"type" : "svg",
+			"position" : "120,100",
+			"size" : "1680,880",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "team_bkg",
+			"type" : "svg",
+			"position" : "319,100",
+			"size" : "1480,184",
+			"path" : "{path}teambkg.svg",
+		}
+		{
+			"name" : "team_logo",
+			"type" : "image",
+			"position" : "1560,110",
+			"size" : "160,160",
+			"aspect" : 1,
+			"path" : "$team-l-logo",
+			"color1" : "255,255,255"
+		},
+		{
+			"name" : "league_logo",
+			"type" : "image"
+			"position" : "1020,120",
+			"size" : "140,140",
+			"aspect" : 1,
+			"path" : "$league-logo",
+			"color1" : "255,255,255"
+		},
+		{
+			"name" : "coatch_bkg",
+			"type" : "svg",
+			"position" : "293,284",
+			"size" : "1455,86",
+			"path" : "{path}coatchbkg.svg",
+		}
+		{
+			"name" : "splitter_part_l",
+			"type" : "svg",
+			"position" : "94,645",
+			"size" : "121, 285",
+			"path" : "{path}splpart.svg",
+		},
+		{
+			"name" : "splitter_part_r",
+			"type" : "svg",
+			"position" : "1628,420",
+			"size" : "121, 285",
+			"path" : "{path}splpart.svg",
+		},
+		{
+			"name" : "title",
+			"type" : "text",
+			"position" : "435,130",
+			"size" : "430,70",
+			"value" : "TEAM ROSTER",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"font" : "Pari-Match,88"
+		},
+		{
+			"name" : "team_name",
+			"type" : "text",
+			"position" : "420,215",
+			"size" : "400,30",
+			"value" : "$team-l-name1",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match,36"
+		},
+		{
+			"name" : "title_coach",
+			"type" : "text",
+			"position" : "393,286",
+			"size" : "200,30",
+			"value" : "HEAD COACH",
+			"color" : "0,0,0",
+			"align" : "1,0",
+			"font" : "Pari-Match,30"
+		},
+		{
+			"name" : "coach_name",
+			"type" : "text",
+			"position" : "378,319",
+			"size" : "500,42",
+			"value" : "",
+			"color" : "0,0,0",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match,56,50,102"
+		},
+
+		{
+			"name" : "splitter_g",
+			"type" : "svg",
+			"position" : "370,390",
+			"size" : "36, 36",
+			"path" : "{path}splitter.svg",
+		},
+		{
+			"name" : "title_g",
+			"type" : "text",
+			"position" : "420,388",
+			"size" : "310,42",
+			"value" : "GOALTENDERS",
+			"scut":"1,5,0,0,0,0,0,0",
+			"color" : "#F8FF13",
+			"align" : "1,0",
+			"font" : "Pari-Match,50"
+		},
+
+		{
+			"name" : "splitter_d",
+			"type" : "svg",
+			"position" : "330,556",
+			"size" : "36, 36",
+			"path" : "{path}splitter.svg",
+		},
+		{
+			"name" : "title_d",
+			"type" : "text",
+			"position" : "378,552",
+			"size" : "310,42",
+			"value" : "DEFENSEMEN",
+			"color" : "#F8FF13",
+			"align" : "1,0",
+			"scut":"1,5,0,0,0,0,0,0",
+			"font" : "Pari-Match,50"
+		},
+
+		{
+			"name" : "splitter_f",
+			"type" : "svg",
+			"position" : "1063,390",
+			"size" : "36, 36",
+			"path" : "{path}splitter.svg",
+		},
+		{
+			"name" : "title_f",
+			"type" : "text",
+			"position" : "1110,388",
+			"size" : "310,42",
+			"value" : "FORWARDS",
+			"color" : "#F8FF13",
+			"align" : "1,0",
+			"scut":"1,5,0,0,0,0,0,0",
+			"font" : "Pari-Match,50"
+		},
+
+		{"player" : "-----G1-----"},
+
+		{
+			"name" : "player_g1_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_g1_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_g1_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lg11-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_g1_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_g1_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_g1_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_g1_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lg11-flag",
+		},
+
+		{"player" : "-----G2-----"},
+
+		{
+			"name" : "player_g2_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_g2_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_g2_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lg12-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_g2_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_g2_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_g2_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_g2_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lg12-flag",
+		},
+
+		{"player" : "-----F1-----"},
+		{
+			"name" : "player_f1_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f1_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f1_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf11-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f1_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f1_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f1_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f1_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf11-flag",
+		},
+
+		{"player" : "-----F2-----"},
+		{
+			"name" : "player_f2_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f2_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f2_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf12-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f2_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f2_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f2_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f2_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf12-flag",
+		},
+
+		{"player" : "-----F3-----"},
+		{
+			"name" : "player_f3_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f3_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f3_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf13-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f3_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f3_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f3_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f3_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf13-flag",
+		},
+
+		{"player" : "-----F4-----"},
+		{
+			"name" : "player_f4_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f4_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f4_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf21-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f4_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f4_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f4_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f4_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf21-flag",
+		},
+
+		{"player" : "-----F5-----"},
+		{
+			"name" : "player_f5_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f5_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f5_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf22-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f5_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f5_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f5_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f5_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf22-flag",
+		},
+
+		{"player" : "-----F6-----"},
+		{
+			"name" : "player_f6_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f6_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f6_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf23-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f6_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f6_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f6_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f6_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf23-flag",
+		},
+
+		{"player" : "-----F7-----"},
+		{
+			"name" : "player_f7_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f7_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f7_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf31-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f7_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f7_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f7_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f7_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf31-flag",
+		},
+
+		{"player" : "-----F8-----"},
+		{
+			"name" : "player_f8_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f8_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f8_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf32-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f8_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f8_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f8_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f8_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf32-flag",
+		},
+
+		{"player" : "-----F9-----"},
+		{
+			"name" : "player_f9_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f9_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f9_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf33-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f9_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f9_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f9_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f9_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf33-flag",
+		},
+
+		{"player" : "-----F10----"},
+		{
+			"name" : "player_f10_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f10_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f10_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf41-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f10_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f10_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f10_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f10_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf41-flag",
+		},
+
+		{"player" : "-----F11----"},
+		{
+			"name" : "player_f11_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f11_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f11_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf42-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f11_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f11_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f11_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f11_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf42-flag",
+		},
+
+		{"player" : "-----F12----"},
+		{
+			"name" : "player_f12_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_f12_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_f12_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-lf43-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_f12_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f12_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_f12_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_f12_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-lf43-flag",
+		},
+
+		{"player" : "-----D1----"},
+		{
+			"name" : "player_d1_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d1_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d1_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld11-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d1_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d1_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d1_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d1_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld11-flag",
+		},
+
+		{"player" : "-----D2----"},
+		{
+			"name" : "player_d2_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d2_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d2_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld12-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d2_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d2_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d2_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d2_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld12-flag",
+		},
+
+		{"player" : "-----D3----"},
+		{
+			"name" : "player_d3_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d3_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d3_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld21-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d3_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d3_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d3_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d3_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld21-flag",
+		},
+
+		{"player" : "-----D4----"},
+		{
+			"name" : "player_d4_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d4_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d4_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld22-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d4_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d4_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d4_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d4_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld22-flag",
+		},
+
+		{"player" : "-----D5----"},
+		{
+			"name" : "player_d5_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d5_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d5_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld31-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d5_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d5_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d5_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d5_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld31-flag",
+		},
+
+		{"player" : "-----D6----"},
+		{
+			"name" : "player_d6_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d6_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d6_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld32-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d6_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d6_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d6_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d6_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld32-flag",
+		},
+
+		{"player" : "-----D7----"},
+		{
+			"name" : "player_d7_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d7_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d7_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld41-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d7_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d7_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d7_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d7_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld41-flag",
+		},
+
+		{"player" : "-----D8----"},
+		{
+			"name" : "player_d8_name",
+			"type" : "text",
+			"position" : "442,446",
+			"size" : "400, 36",
+			"value" : "",
+			"color" : "#ffffff",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Light,35",
+		},
+		{
+			"name" : "player_d8_bkg",
+			"type" : "svg",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"path" : "{path}playerbkg.svg",
+		},
+		{
+			"name" : "player_d8_number",
+			"type" : "text",
+			"position" : "354,446",
+			"size" : "74, 36",
+			"value" : "$player-ld42-number",
+			"color" : "#000000",
+			"align" : "0,0",
+			"font" : "Pari-Match,38"
+		},
+		{
+			"name" : "player_d8_curtain1",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "#FFFFFF", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d8_curtain2",
+			"type" : "polygon",
+			"position" : "349,446",
+			"size" : "84, 36",
+			"color" : "255,255,255,100", 
+			"points" : "0,36 10,0 84,0 74,36",
+		},
+		{
+			"name" : "player_d8_line",
+			"type" : "solid",
+			"position" : "422,480",
+			"size" : "493, 2",
+			"color" : "#F8FF13",
+		},
+		{
+			"name" : "player_d8_flag",
+			"type" : "image",
+			"position" : "860,450",
+			"size" : "54,27",
+			"path" : "$player-ld42-flag",
+		},
+
+		{
+			"name" : "main_curtain1",
+			"type" : "svg",
+			"position" : "120,100",
+			"size" : "1680,880",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "main_curtain2",
+			"type" : "svg",
+			"position" : "120,100",
+			"size" : "1680,880",
+			"path" : "{path}mainyellowbkg.svg",
+		},
+		{
+			"name" : "main_curtain3",
+			"type" : "svg",
+			"position" : "120,100",
+			"size" : "1680,880",
+			"path" : "{path}mainwhitebkg.svg",
+		},
+
+
+	],
+
+	"commands" : [
+	{
+		"name" : "show",
+		"transition" : [
+		{"fr" : 0, "layer" : "command", "type" : "script", "to" : "init()"},
+		{"fr" : 1, "layer" : "command", "type" : "command", "to" : "show-main"},
+	]},
+	{
+		"name" : "show-main",
+		"transition" : [
+			
+		{"fr" : 0, "dur" :1, "layer" : "temp_bkg", "type" : "opacity", "from" : "0", "to" : "0.5"},
+		{"fr" : 0, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+		{"fr" : 0, "dur" : 20, "layer" : "main_bkg","type" : "clip", "curve":2, "from" : "0,880,1680,880", "to" : "0,0,1680,880"},
+		{"fr" : 8, "layer" : "team_bkg", "type" : "visible", "to" : 1},	
+		{"fr" : 8, "dur" : 17, "layer" : "team_bkg","type" : "clip", "curve":2, "from" : "0,0,1480,0", "to" : "0,0,1480,184"},
+		{"fr" : 14, "layer" : "coatch_bkg", "type" : "visible", "to" : 1},
+		{"fr" : 14, "dur" : 11, "layer" : "coatch_bkg","type" : "clip", "curve":2, "from" : "0,0,1455,0", "to" : "0,0,1455,86"},
+		{"fr" : 16, "layer" : "splitter_part_l", "type" : "visible", "to" : 1},
+		{"fr" : 16, "dur" : 30, "layer" : "splitter_part_l", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 16, "dur" : 30, "layer" : "splitter_part_l", "type" : "move", "curve":6, "from" : "173 ,366", "to" : "94,645"},
+		{"fr" : 16, "layer" : "splitter_part_r", "type" : "visible", "to" : 1},
+		{"fr" : 16, "dur" : 30, "layer" : "splitter_part_r", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 16, "dur" : 30, "layer" : "splitter_part_r", "type" : "move", "curve":6, "from" : "1708 ,141", "to" : "1628,420"},
+		{"fr" : 13, "layer" : "title", "type" : "visible", "to" : 1},
+		{"fr" : 13, "dur" : 25, "layer" : "title", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 13, "dur" : 30, "layer" : "title", "type" : "move", "curve":2, "from" : "635,130", "to" : "435,130"},
+		{"fr" : 20, "layer" : "team_name", "type" : "visible", "to" : 1},
+		{"fr" : 20, "dur" : 25, "layer" : "team_name", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 20, "dur" : 30, "layer" : "team_name", "type" : "move", "curve":2, "from" : "620,215", "to" : "420,215"},
+		{"fr" : 16, "layer" : "league_logo", "type" : "visible", "to" : 1},
+		{"fr" : 16, "dur" : 25, "layer" : "league_logo", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 13, "dur" : 30, "layer" : "league_logo", "type" : "move", "curve":2, "from" : "1220,120", "to" : "1020,120"},
+		{"fr" : 16, "layer" : "team_logo", "type" : "visible", "to" : 1},
+		{"fr" : 16, "dur" : 25, "layer" : "team_logo", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 16, "dur" : 30, "layer" : "team_logo", "type" : "move", "curve":2, "from" : "1600,110", "to" : "1560,110"},
+		{"fr" : 22, "layer" : "title_coach", "type" : "visible", "to" : 1},
+		{"fr" : 22, "dur" : 17, "layer" : "title_coach", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 22, "dur" : 20, "layer" : "title_coach", "type" : "move", "curve":2, "from" : "493,286", "to" : "393,286"},
+		{"fr" : 30, "layer" : "coach_name", "type" : "visible", "to" : 1},
+		{"fr" : 30, "dur" : 20, "layer" : "coach_name", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 30, "dur" : 25, "layer" : "coach_name", "type" : "move", "curve":2, "from" : "478,319", "to" : "378,319"},
+		{"fr" : 30, "layer" : "splitter_g", "type" : "visible", "to" : 1},
+		{"fr" : 30, "dur" : 25, "layer" : "splitter_g", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_g", "type" : "scale", "curve":2, "from" : "12,12", "to" : "36, 36"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_g", "type" : "move", "curve":2, "from" : "382,402", "to" : "370,390"},
+		{"fr" : 38, "layer" : "title_g", "type" : "visible", "to" : 1},
+		{"fr" : 38, "dur" : 24, "layer" : "title_g","type" : "clip", "curve":2, "from" : "310,0,310,42", "to" : "0,0,310,42"},
+		{"fr" : 38, "dur" : 24, "layer" : "title_g", "type" : "move", "curve":2, "from" : "100,388", "to" : "420,388"},
+		{"fr" : 30, "layer" : "splitter_d", "type" : "visible", "to" : 1},
+		{"fr" : 30, "dur" : 25, "layer" : "splitter_d", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_d", "type" : "scale", "curve":2, "from" : "12,12", "to" : "36, 36"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_d", "type" : "move", "curve":2, "from" : "342,568", "to" : "330,556"},
+		{"fr" : 38, "layer" : "title_d", "type" : "visible", "to" : 1},
+		{"fr" : 38, "dur" : 24, "layer" : "title_d","type" : "clip", "curve":2, "from" : "310,0,310,42", "to" : "0,0,310,42"},
+		{"fr" : 38, "dur" : 24, "layer" : "title_d", "type" : "move", "curve":2, "from" : "58,552", "to" : "378,552"},
+		{"fr" : 30, "layer" : "splitter_f", "type" : "visible", "to" : 1},
+		{"fr" : 30, "dur" : 25, "layer" : "splitter_f", "type" : "opacity", "from" : "0", "to" : "1"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_f", "type" : "scale", "curve":2, "from" : "12,12", "to" : "36, 36"},
+		{"fr" : 30, "dur" : 30, "layer" : "splitter_f", "type" : "move", "curve":2, "from" : "1075,402", "to" : "1063,390"},
+		{"fr" : 38, "layer" : "title_f", "type" : "visible", "to" : 1},
+		{"fr" : 38, "dur" : 24, "layer" : "title_f","type" : "clip", "curve":2, "from" : "310,0,310,42", "to" : "0,0,310,42"},
+		{"fr" : 38, "dur" : 24, "layer" : "title_f", "type" : "move", "curve":2, "from" : "790,388", "to" : "1110,388"},
+
+		{"fr" : 200, "layer" : "command", "type" : "signal", "to" : "end-show"},
+		{"fr" : 1500, "layer" : "command", "type" : "command", "to" : "hide"},
+			],
+		},
+
+		{
+			"name" : "hide",
+			"transition" : [
+
+				{"fr" : 0, "layer" : "main_curtain1", "type" : "visible", "to" : 1},
+				{"fr" : 0, "dur" : 16, "layer" : "main_curtain1","type" : "clip", "curve":1, "from" : "0,880,1680,880", "to" : "0,0,1680,880"},
+				{"fr" : 16, "dur" : 16, "layer" : "main_curtain1","type" : "clip", "curve":1, "from" : "0,0,1680,880", "to" : "0,0,1680,0"},
+				{"fr" : 12, "layer" : "main_curtain2", "type" : "visible", "to" : 1},
+				{"fr" : 12, "dur" : 13, "layer" : "main_curtain2","type" : "clip", "curve":1, "from" : "0,880,1680,880", "to" : "0,0,1680,880"},
+				{"fr" : 24, "dur" : 15, "layer" : "main_curtain2","type" : "clip", "curve":2, "from" : "0,0,1680,880", "to" : "0,0,1680,0"},
+				{"fr" : 20, "layer" : "main_curtain3", "type" : "visible", "to" : 1},
+				{"fr" : 20, "dur" : 9, "layer" : "main_curtain3","type" : "clip", "curve":1, "from" : "0,880,1680,880", "to" : "0,0,1680,880"},
+				{"fr" : 29, "dur" : 11, "layer" : "main_curtain3","type" : "clip", "curve":2, "from" : "0,0,1680,880", "to" : "0,0,1680,0"},
+				{"fr" : 40, "layer" : "main_curtain3", "type" : "visible", "to" : 0},
+				{"fr" : 0, "dur" : 26, "layer" : "splitter_part_l", "type" : "opacity", "from" : "", "to" : "0"},
+				{"fr" : 0, "dur" : 26, "layer" : "splitter_part_l", "type" : "move", "curve":6, "from" : "", "to" : "173 ,366"},
+				{"fr" : 26, "layer" : "splitter_part_l", "type" : "visible", "to" : 0},
+				{"fr" : 0, "layer" : "splitter_part_r", "type" : "visible", "to" : 1},
+				{"fr" : 0, "dur" : 26, "layer" : "splitter_part_r", "type" : "opacity", "from" : "", "to" : "0"},
+				{"fr" : 0, "dur" : 26, "layer" : "splitter_part_r", "type" : "move", "curve":6, "from" : "", "to" : "1708 ,141"},
+				{"fr" : 26, "layer" : "splitter_part_r", "type" : "visible", "to" : 0},
+				
+				{"fr" : 25, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "team_bkg", "type" : "visible", "to" : 0},		
+				{"fr" : 25, "layer" : "coatch_bkg", "type" : "visible", "to" : 0},	
+				{"fr" : 25, "layer" : "splitter_g", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "title_g", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "splitter_f", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "title_f", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "splitter_d", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "title_d", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "title", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "team_name", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "title_coach", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "coach_name", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "team_logo", "type" : "visible", "to" : 0},
+				{"fr" : 25, "layer" : "league_logo", "type" : "visible", "to" : 0},
+
+				{"fr" : 45, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+			]
+		},
+	]
+} 

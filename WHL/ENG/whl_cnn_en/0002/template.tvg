@@ -1,0 +1,304 @@
+{
+	"template" : "0002",
+	"scale" : "1920,1080",
+	"rate" : 25.0,
+	"values" : {
+		"$team-l-logo" : "",
+		"$team-r-logo" : "",
+		"$team-l-color1" : "0,0,0",
+		"$team-r-color1" : "0,0,0",
+		"$score-left" : "0",
+		"$score-right" : "0",
+		"$team-l-name1" : "",
+		"$team-r-name1" : "",
+		"$match-status" : "",
+	},
+
+	"fonts" : [	"{path-fonts}TerminalDosis_Bold.ttf"
+			],
+	"layers" : [
+	
+		{
+			"name" : "solidL",
+			"type" : "solid",
+			"position" : "516,850",
+			"size" : "444,117",
+			"color" : "$team-l-color1",
+			"style" : 24,
+			"texture" : "{path}texture.png",
+			"radius" : "14,10",
+			"scut":"1,3,0,0,0,0,0,0",
+		},
+		{
+			"name" : "solidLc",
+			"type" : "solid",
+			"position" : "940,850",
+			"size" : "20,117",
+			"color" : "$team-l-color1",
+			"style" : 24,
+			"texture" : "{path}texture.png",
+			"scut":"1,3,0,0,0,0,0,0",
+		},
+		{
+			"name" : "solidR",
+			"type" : "solid",
+			"position" : "960,850",
+			"size" : "444,117",
+			"color" : "$team-r-color1",
+			"style" : 24,
+			"texture" : "{path}texture.png",
+			"radius" : "14,10",
+			"scut":"0,0,1,3,0,0,0,0",
+		},
+		{
+			"name" : "solidRc",
+			"type" : "solid",
+			"position" : "960,850",
+			"size" : "20,117",
+			"color" : "$team-r-color1",
+			"style" : 24,
+			"texture" : "{path}texture.png",
+			"scut":"0,0,1,3,0,0,0,0",
+		},
+
+		{
+			"name" : "logoL",
+			"type" : "image",
+			"position" : "530,850",
+			"size" : "110,110",
+			"path" : "$team-l-logo",
+		},
+		{
+			"name" : "logoR",
+			"type" : "image",
+			"position" : "1280,850",
+			"size" : "110,110",
+			"path" : "$team-r-logo",
+			"scut":"1,20,0,0,0,0,0,0",
+		},
+		{
+			"name" : "pic1",
+			"type" : "image",
+			"position" : "506,850",
+			"size" : "908,117",
+			"path" : "{path}image01.png",
+			"scut":"1,30,1,30,0,0,0,0",
+		},
+		{
+			"name" : "pic2",
+			"type" : "image",
+			"position" : "506,850",
+			"size" : "32,117",
+			"path" : "{path}image02.png"
+		},
+		{
+			"name" : "pic3",
+			"type" : "image",
+			"position" : "1382,850",
+			"size" : "32,117",
+			"path" : "{path}image03.png"
+		},
+
+		{
+			"name" : "scoreL",
+			"type" : "text",
+			"position" : "890,865",
+			"size" : "65,56",
+			"value" : "$score-left",
+			"color" : "255,255,255",
+			"font" : "Terminal Dosis,68,63",
+			"scaled" : "1,0"
+		},
+		{
+			"name" : "scoreR",
+			"type" : "text",
+			"position" : "965,865",
+			"size" : "65,56",
+			"value" : "$score-right",
+			"color" : "255,255,255",
+			"font" : "Terminal Dosis,68,63",
+			"scaled" : "1,0"
+		},
+		{
+			"name" : "scoreC",
+			"type" : "text",
+			"position" : "950,885",
+			"size" : "20,36",
+			"value" : "-",
+			"color" : "255,255,255",
+			"font" : "Terminal Dosis,50,63",
+		},
+		{
+			"name" : "nameL",
+			"type" : "text",
+			"position" : "645,892",
+			"size" : "235,36",
+			"value" : "$team-l-name1",
+			"color" : "255,255,255",
+			"font" : "Terminal Dosis,41,63,0,0,1",
+			"scaled" : "1,0",
+		},
+		{
+			"name" : "nameR",
+			"type" : "text",
+			"position" : "1036,892",
+			"size" : "235,36",
+			"value" : "$team-r-name1",
+			"color" : "255,255,255",
+			"font" : "Terminal Dosis,41,63,0,0,1",
+			"scaled" : "1,0",
+		},
+		{
+			"name" : "statusM",
+			"type" : "text",
+			"position" : "892,928",
+			"size" : "133,20",
+			"value" : "$match-status",
+			"color" : "255,222,0",
+			"font" : "Terminal Dosis,24,63,0,0,1",
+			"scaled" : "1,0",
+		},
+
+	],
+
+	"commands" : [
+		{
+			"name" : "show",
+			"transition" : [
+				{"fr" : 0, "layer" : "pic1", "type" : "visible", "to" : 1},
+				{"fr" : 0, "layer" : "pic2", "type" : "visible", "to" : 1},
+				{"fr" : 0, "layer" : "pic3", "type" : "visible", "to" : 1},
+
+				{"fr" : 0, "layer" : "solidL", "type" : "visible", "to" : 1},
+				{"fr" : 1, "layer" : "solidLc", "type" : "visible", "to" : 1},
+				{"fr" : 0, "layer" : "solidR", "type" : "visible", "to" : 1},
+				{"fr" : 1, "layer" : "solidRc", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "logoL", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "logoR", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "scoreL", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "scoreR", "type" : "visible", "to" : 1},
+				{"fr" : 7, "layer" : "scoreC", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "nameL", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "nameR", "type" : "visible", "to" : 1},
+				{"fr" : 6, "layer" : "statusM", "type" : "visible", "to" : 1},
+
+				{"fr" : 0, "dur" : 3, "layer" : "solidL","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 0, "dur" : 3, "layer" : "solidR","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 0, "dur" : 3, "layer" : "pic2","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 0, "dur" : 3, "layer" : "pic3","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+
+				{"fr" : 0, "dur" : 8, "layer" : "solidL","type" : "clip", "curve":3, "from" : "454,20,0,77", "to" : "-0,0,444,117"},
+				{"fr" : 0, "dur" : 8, "layer" : "solidLc","type" : "clip", "curve":3, "from" : "30,20,0,77", "to" : "-424,0,454,117"},
+				{"fr" : 0, "dur" : 8, "layer" : "solidR","type" : "clip", "curve":3, "from" : "-10,20,0,77", "to" : "0,0,444,117"},
+				{"fr" : 0, "dur" : 8, "layer" : "solidRc","type" : "clip", "curve":3, "from" : "-10,20,0,77", "to" : "0,0,444,117"},
+
+				{"fr" : 0, "dur" : 8, "layer" : "pic1", "type" : "move", "curve" : 3, "from" : "506,870", "to" : "506,850"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic2", "type" : "move", "curve" : 3, "from" : "960,870", "to" : "506,850"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic2","type" : "clip", "curve":3, "from" : "0,0,0,117", "to" : "0,0,454,117"},
+
+				{"fr" : 0, "dur" : 8, "layer" : "pic3", "type" : "move", "curve" : 3, "from" : "928,870", "to" : "1382,850"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic3","type" : "clip", "curve":3, "from" : "32,0,0,117", "to" : "-422,0,454,117"},
+
+				{"fr" : 0, "dur" : 8, "layer" : "pic1","type" : "clip", "curve":3, "from" : "454,0,0,117", "to" : "0,0,908,117"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic1","type" : "opacity", "curve":3, "from" : "0", "to" : "1"},
+				
+				{"fr" : 0, "dur" : 8, "layer" : "pic1", "type" : "scale", "curve":3, "from" : "908,77", "to" :"908, 117"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic2", "type" : "scale", "curve":3, "from" : "32,77", "to" :"32, 117"},
+				{"fr" : 0, "dur" : 8, "layer" : "pic3", "type" : "scale", "curve":3, "from" : "32,77", "to" :"32, 117"},
+
+
+				{"fr" : 6, "dur" : 5, "layer" : "logoL","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "logoR","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "nameL","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "nameR","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "scoreL","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "scoreR","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 7, "dur" : 4, "layer" : "scoreC","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+				{"fr" : 6, "dur" : 5, "layer" : "statusM","type" : "opacity", "curve":0, "from" : "0", "to" : "1"},
+
+				{"fr" : 6, "dur" : 5, "layer" : "logoL", "type" : "move", "curve" : 2, "from" : "550,850", "to" : "530,850"},
+				{"fr" : 6, "dur" : 5, "layer" : "logoR", "type" : "move", "curve" : 2, "from" : "1260,850", "to" : "1280,850"},
+				{"fr" : 6, "dur" : 5, "layer" : "nameL", "type" : "move", "curve" : 2, "from" : "665,892", "to" : "645,892"},
+				{"fr" : 6, "dur" : 5, "layer" : "nameR", "type" : "move", "curve" : 2, "from" : "1016,892", "to" : "1036,892"},
+				{"fr" : 6, "dur" : 5, "layer" : "scoreL", "type" : "move", "curve" : 2, "from" : "910,865", "to" : "890,865"},
+				{"fr" : 6, "dur" : 5, "layer" : "scoreR", "type" : "move", "curve" : 2, "from" : "945,865", "to" : "965,865"},
+
+				{"fr" : 11, "layer" : "command", "type" : "signal", "to" : "end-show"},
+				{"fr" : 150, "layer" : "command", "type" : "command", "to" : "hide"},
+
+			],
+		},
+		{
+			"name" : "hide",
+			"transition" : [
+			
+				{"fr" : 0, "dur" : 5, "layer" : "logoL","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 5, "layer" : "logoR","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 5, "layer" : "nameL","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 5, "layer" : "nameR","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 4, "layer" : "scoreL","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 4, "layer" : "scoreR","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 3, "layer" : "scoreC","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 0, "dur" : 5, "layer" : "statusM","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+
+				{"fr" : 0, "dur" : 5, "layer" : "logoL", "type" : "move", "curve" : 1, "from" : "", "to" : "550,850"},
+				{"fr" : 0, "dur" : 5, "layer" : "logoR", "type" : "move", "curve" : 1, "from" : "", "to" : "1260,850"},
+				{"fr" : 0, "dur" : 5, "layer" : "nameL", "type" : "move", "curve" : 1, "from" : "", "to" : "665,892"},
+				{"fr" : 0, "dur" : 5, "layer" : "nameR", "type" : "move", "curve" : 1, "from" : "", "to" : "1016,892"},
+				{"fr" : 0, "dur" : 5, "layer" : "scoreL", "type" : "move", "curve" : 1, "from" : "", "to" : "910,865"},
+				{"fr" : 0, "dur" : 5, "layer" : "scoreR", "type" : "move", "curve" : 1, "from" : "", "to" : "945,865"},
+
+				{"fr" : 3, "dur" : 8, "layer" : "pic1", "type" : "move", "curve" : 3, "from" : "", "to" : "506,870"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidL", "type" : "move", "curve" : 3, "from" : "", "to" : "516,850"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidR", "type" : "move", "curve" : 3, "from" : "", "to" : "960,850"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidLc", "type" : "move", "curve" : 3, "from" : "", "to" : "940,850"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidRc", "type" : "move", "curve" : 3, "from" : "", "to" : "960,850"},
+
+				{"fr" : 3, "dur" : 8, "layer" : "pic1", "type" : "scale", "curve":3,"from" : "", "to" :"908,77"},
+				{"fr" : 3, "dur" : 8, "layer" : "pic2", "type" : "scale", "curve":3,"from" : "", "to" :"32,77"},
+				{"fr" : 3, "dur" : 8, "layer" : "pic3", "type" : "scale", "curve":3,"from" : "", "to" :"32,77"},
+
+				{"fr" : 3, "dur" : 8, "layer" : "pic1","type" : "clip", "curve":3, "from" : "", "to" : "454,0,0,117"},
+				{"fr" : 3, "dur" : 8, "layer" : "pic1","type" : "opacity", "curve":3, "from" : "1", "to" : "0"},
+
+				{"fr" : 3, "dur" : 8, "layer" : "pic2", "type" : "move", "curve" : 3, "from" : "", "to" : "960,870"},
+				{"fr" : 3, "dur" : 8, "layer" : "pic2","type" : "clip", "curve":3, "from" : "", "to" : "0,0,0,117"},
+				
+				{"fr" : 3, "dur" : 8, "layer" : "pic3", "type" : "move", "curve" : 3, "from" : "", "to" : "928,870"},
+				{"fr" : 3, "dur" : 8, "layer" : "pic3","type" : "clip", "curve":3, "from" : "", "to" : "32,0,0,117"},
+				
+
+				{"fr" : 3, "dur" : 8, "layer" : "solidL","type" : "clip", "curve":3, "from" : "", "to" : "454,20,0,77"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidLc","type" : "clip", "curve":3, "from" : "", "to" : "30,20,0,77"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidR","type" : "clip", "curve":3, "from" : "", "to" : "-10,20,0,77"},
+				{"fr" : 3, "dur" : 8, "layer" : "solidRc","type" : "clip", "curve":3, "from" : "", "to" : "-10,20,0,77"},
+
+				{"fr" : 8, "dur" : 3, "layer" : "solidL","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 8, "dur" : 3, "layer" : "solidR","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 8, "dur" : 3, "layer" : "pic2","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+				{"fr" : 8, "dur" : 3, "layer" : "pic3","type" : "opacity", "curve":0, "from" : "1", "to" : "0"},
+
+
+
+				{"fr" : 11, "layer" : "pic1", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "pic2", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "pic3", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "solidL", "type" : "visible", "to" : 0},
+				{"fr" : 9, "layer" : "solidLc", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "solidR", "type" : "visible", "to" : 0},
+				{"fr" : 9, "layer" : "solidRc", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "logoL", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "logoR", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "scoreL", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "scoreR", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "scoreC", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "nameL", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "nameR", "type" : "visible", "to" : 0},
+				{"fr" : 11, "layer" : "statusM", "type" : "visible", "to" : 0},
+
+				{"fr" : 12, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+			]
+		}
+	]
+
+} 

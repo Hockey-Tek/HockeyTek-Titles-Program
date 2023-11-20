@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_2"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1447 177"
+	 style="enable-background:new 0 0 1447 177;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F42525;}
+	.st2{fill:#4D4D4D;}
+</style>
+<path id="black" d="M0.5,145.8L20,31.2C22.9,14.1,38.8,0,55.4,0h1366.3c16.6,0,27.7,14.1,24.8,31.2L1427,145.7
+	c-2.9,17.2-18.9,31.2-35.5,31.2H25.3C8.7,177-2.4,162.9,0.5,145.8L0.5,145.8z"/>
+<path id="wite" class="st0" d="M0.5,145.8L20,31.2C22.9,14.1,38.8,0,55.4,0h1366.3c16.6,0,27.7,14.1,24.8,31.2L1427,145.7
+	c-2.9,17.2-18.9,31.2-35.5,31.2H25.3C8.7,177-2.4,162.9,0.5,145.8L0.5,145.8z"/>
+<path id="red" class="st1" d="M0.5,145.8L20,31.2C22.9,14.1,38.8,0,55.4,0h1366.3c16.6,0,27.7,14.1,24.8,31.2L1427,145.7
+	c-2.9,17.2-18.9,31.2-35.5,31.2H25.3C8.7,177-2.4,162.9,0.5,145.8L0.5,145.8z"/>
+<path id="down" class="st2" d="M429.3,130l-8.3,47h970.9c16.6,0,32.5-14.1,35.5-31.2l2.7-15.8H429.3z"/>
+<polygon id="name-bkg" class="st0" points="829,130 430,130 452.9,0 851.9,0 "/>
+<polygon id="data-bkg" points="1443.4,49 842.3,49 828,130 1429.6,130 "/>
+</svg>

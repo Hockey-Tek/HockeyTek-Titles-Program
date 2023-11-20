@@ -1,0 +1,350 @@
+﻿{
+	"template" : "0011",
+	"scale" : "1920,1080",
+	"origin" : "0,0",
+	"rate" : 50.0,
+
+	"values" : {
+		"$team-l-logo" : "", 
+		"$player-photo" : "",
+		"$player-number" : "",
+		"$penalty-time" : "",
+		"$violation" : "",
+		"$player-fname" : "",
+		"$player-sname" : "",  
+	},
+
+	"script": "
+		function initSvg()
+		{
+			curtain_white.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil1']);
+			curtain_white.update = 1;
+
+			curtain_gray.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil2']);
+			curtain_gray.update = 1;
+
+			curtain_darkgray.addAttributes([1, 'path', 'id', 'rect', 'class', 'fil3']);
+			curtain_darkgray.update = 1;
+		}
+
+		function updateValue()
+		{
+			if(template.values('$violation').length > 0)
+			{
+				text_info1.value = 'PENALTY: ' + template.values('$violation');
+				text_info1.update = 1;
+			}
+			if(template.values('$player-fname').length > 0)
+			{
+				player_name.value = template.values('$player-fname') + ' ' + template.values('$player-sname');
+				player_name.update = 1;
+			}
+			if(template.values('$penalty-time').length > 0)
+			{
+				text_info2.value = template.values('$penalty-time') + ' MIN';
+				text_info2.update = 1;
+			}
+		}
+
+		function isPlayerNumber()
+		{
+			if(template.values('$player-number') > 0)
+			{
+				player_number.visible = 1;
+			}
+		}
+		function isMaskNumber()
+		{
+			if(template.values('$player-number') > 0)
+			{
+				mask_number.visible = 1;
+				number_bkg.visible = 1;
+			}
+		}
+		",
+
+
+	"fonts" : [
+			"{path-fonts}AlumniSansUpdated-Regular.ttf"	
+ 		],
+
+	"layers" : [
+		{
+			"name" : "curtain_white",
+			"type" : "svg",
+			"position" : "259, 810",
+			"size" : "1449, 179",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "curtain_gray",
+			"type" : "svg",
+			"position" : "259, 810",
+			"size" : "1449, 179",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "curtain_darkgray",
+			"type" : "svg",
+			"position" : "259, 810",
+			"size" : "1449, 179",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "main_bkg",
+			"type" : "svg",
+			"position" : "259, 810",
+			"size" : "1449, 179",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "player_name",
+			"type" : "text",
+			"position" : "720,834",
+			"size" : "930,62",
+			"value" : "DOBROVOLSKY ALEKSANDR",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"case" : 1, 
+			"scaled" : "1,0",
+            "font" : "Alumni Sans Updated,90,700,0,0"
+		},
+		{
+			"name" : "mask_name",
+			"type" : "svg",
+			"position" : "700, 810",
+			"size" : "39, 179",
+			"path" : "{path}masklogo.svg",
+		},
+		{
+			"name" : "bottom_bkg",
+			"type" : "svg",
+			"position" : "259, 917",
+			"size" : "1449,72",
+			"path" : "{path}bottombkg.svg",
+		},
+		{
+			"name" : "text_info1",
+			"type" : "text",
+			"position" : "708,935",
+			"size" : "750,37",
+			"value" : "PENALTY: TRIPPING",
+			"color" : "255,255,255",
+			"align" : "1,0",
+			"scaled" : "1,0",
+			"case" : 1, 
+            "font" : "Alumni Sans Updated,45,700,0,0"
+		},
+		{
+			"name" : "text_info2",
+			"type" : "text",
+			"position" : "1420,935",
+			"size" : "200,37",
+			"value" : "2+5 MIN",
+			"color" : "255,255,255",
+			"align" : "2,0",
+			"case" : 1, 
+            "font" : "Alumni Sans Updated,45,700,0,0"
+		},
+		{
+			"name" : "mask_info",
+			"type" : "svg",
+			"position" : "700,918",
+			"size" : "24, 70",
+			"path" : "{path}maskpenalty.svg",
+		},
+		{
+			"name" : "number_bkg",
+			"type" : "svg",
+			"position" : "563,832",
+			"size" : "122,66",
+			"path" : "{path}numberbkg.svg",
+		},
+		{
+			"name" : "player_number",
+			"type" : "text",
+			"position" : "563,832",
+			"size" : "122,66",
+			"value" : "$player-number",
+			"color" : "255,255,255",
+			"align" : "0,0",
+            "font" : "Alumni Sans Updated,90,700,0,0"
+		},
+		{
+			"name" : "mask_number",
+			"type" : "svg",
+			"position" : "660,832",
+			"size" : "35, 66",
+			"path" : "{path}masknumber.svg",
+		},
+		{
+			"name" : "team_logo",
+			"type" : "image",
+			"position" : "259,764",
+			"size" : "271,271",
+			"path" : "$team-l-logo",
+		},
+		{
+			"name" : "mask_around",
+			"type" : "mask",
+			"position" : "249,810",
+			"size" : "1469,179",
+			"path" : "{path}maskaround.svg",
+		},
+		{
+			"name" : "mask_logo",
+			"type" : "svg",
+			"position" : "280, 810",
+			"size" : "39, 179",
+			"path" : "{path}masklogo.svg",
+		},
+		{
+			"name" : "player_photo",
+			"type" : "image",
+			"color" : "255,255,255",
+			"position" : "270,689",
+			"size" : "420,300",
+			"aspect" : 1,
+			"path" : "$player-photo",
+		},
+
+	],
+
+	"commands" : [
+
+
+		{
+			"name" : "show",
+			"transition" : [
+			{"fr" : 0  "layer" : "command", "type" : "script", "to" : "initSvg()"},
+			{"fr" : 0, "layer" : "mask_around", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "layer" : "curtain_white", "type" : "visible", "to" : 1},
+			{"fr" : 0, "dur" : 20, "layer" : "curtain_white", "type" : "move", "curve": 2, "from" : "-1190,810", "to" : "259,810"},
+			{"fr" : 0, "dur" : 20, "layer" : "curtain_white", "type" : "clip", "curve": 2, "from" : "1449,0,1449,179", "to" :"0,0,1449,179"},
+			
+			{"fr" : 10  "layer" : "command", "type" : "script", "to" : "updateValue()"},
+			{"fr" : 10, "layer" : "curtain_gray", "type" : "visible", "to" : 1},
+			{"fr" : 10, "dur" : 18, "layer" : "curtain_gray", "type" : "move", "curve": 2, "from" : "-1190,810", "to" : "259,810"},
+			{"fr" : 10, "dur" : 18, "layer" : "curtain_gray", "type" : "clip", "curve": 2, "from" : "1449,0,1449,179", "to" :"0,0,1449,179"},
+
+			{"fr" : 20, "layer" : "curtain_darkgray", "type" : "visible", "to" : 1},
+			{"fr" : 20, "dur" : 17, "layer" : "curtain_darkgray", "type" : "move", "curve": 2, "from" : "-1190,810", "to" : "259,810"},
+			{"fr" : 20, "dur" : 17, "layer" : "curtain_darkgray", "type" : "clip", "curve": 2, "from" : "1449,0,1449,179", "to" :"0,0,1449,179"},
+
+			{"fr" : 28, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 28, "dur" : 16, "layer" : "main_bkg", "type" : "move", "curve": 2, "from" : "-1190,810", "to" : "259,810"},
+			{"fr" : 28, "dur" : 16, "layer" : "main_bkg", "type" : "clip", "curve": 2, "from" : "1449,0,1449,179", "to" :"0,0,1449,179"},
+		
+			{"fr" : 46, "layer" : "bottom_bkg", "type" : "visible", "to" : 1},
+			{"fr" : 46, "dur" : 18, "layer" : "bottom_bkg", "type" : "move", "curve": 2, "from" : "1708,917", "to" : "259,917"},
+			{"fr" : 46, "dur" : 18, "layer" : "bottom_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,72", "to" :"0,0,1449,72"},
+
+			{"fr" : 40, "layer" : "command", "type" : "script", "to" : "isMaskNumber()"},
+			{"fr" : 40, "dur" : 18, "layer" : "number_bkg", "type" : "move", "curve": 2, "from" : "685,832", "to" : "563,832"},
+			{"fr" : 40, "dur" : 18, "layer" : "number_bkg", "type" : "clip", "curve": 2, "from" : "0,0,0,66", "to" :"0,0,122,66"},
+			{"fr" : 58, "layer" : "mask_number", "type" : "visible", "to" : 0},
+
+			{"fr" : 45, "layer" : "command", "type" : "script", "to" : "isPlayerNumber()"},
+			{"fr" : 45, "dur" : 18, "layer" : "player_number", "type" : "move", "curve": 2, "from" : "685,832", "to" : "563,832"},
+			{"fr" : 45, "dur" : 18, "layer" : "player_number", "type" : "clip", "curve": 2, "from" : "0,0,0,66", "to" :"0,0,122,66"},
+
+			{"fr" : 43, "layer" : "team_logo", "type" : "visible", "to" : 1},
+			{"fr" : 43, "dur" : 6, "layer" : "team_logo", "type" : "clip", "curve": 0, "from" : "0,47,55,178", "to" :"0,47,295,178"},
+			{"fr" : 43, "layer" : "mask_logo", "type" : "visible", "to" : 1},
+			{"fr" : 43, "dur" : 6, "layer" : "mask_logo", "type" : "move", "curve": 0, "from" : "280, 810", "to" : "520, 810"},
+			{"fr" : 49, "layer" : "mask_logo", "type" : "visible", "to" : 0},
+
+			{"fr" : 40, "layer" : "player_photo", "type" : "visible", "to" : 1},
+			{"fr" : 40, "dur" : 25, "layer" : "player_photo", "type" : "move", "curve": 2, "from" : "270,989", "to" : "270,689"},
+			{"fr" : 40, "dur" : 25, "layer" : "player_photo", "type" : "clip", "curve": 2, "from" : "0,0,420,0", "to" :"0,0,420,300"},
+
+			{"fr" : 33, "layer" : "player_name", "type" : "visible", "to" : 1},
+			{"fr" : 33, "layer" : "mask_name", "type" : "visible", "to" : 1},
+			{"fr" : 33, "dur" : 20, "layer" : "mask_name", "type" : "move", "curve": 2, "from" : "700, 810", "to" : "1630, 810"},
+			{"fr" : 33, "dur" : 20, "layer" : "player_name", "type" : "clip", "curve": 2, "from" : "0,0,0,62", "to" :"0,0,930,62"},
+			{"fr" : 53, "layer" : "mask_name", "type" : "visible", "to" : 0},
+
+			{"fr" : 54, "layer" : "text_info1", "type" : "visible", "to" : 1},
+			{"fr" : 54, "layer" : "mask_info", "type" : "visible", "to" : 1},
+			{"fr" : 54, "dur" : 7, "layer" : "text_info1", "type" : "clip", "curve": 2, "from" : "0,0,0,37", "to" :"0,0,750,37"},
+			{"fr" : 54, "dur" : 7, "layer" : "mask_info", "type" : "move", "curve": 2, "from" : "685,918", "to" : "1435,918"},
+
+			{"fr" : 61, "layer" : "text_info2", "type" : "visible", "to" : 1},
+			{"fr" : 61, "dur" : 7, "layer" : "text_info2", "type" : "clip", "curve": 2, "from" : "0,0,0,37", "to" :"0,0,200,37"},
+			{"fr" : 61, "dur" : 7, "layer" : "mask_info", "type" : "move", "curve": 2, "from" : "1410,918", "to" : "1610,918"},
+			{"fr" : 68, "layer" : "mask_info", "type" : "visible", "to" : 0},
+	
+			{"fr" : 69, "layer" : "command", "type" : "signal", "to" : "end-show"},
+			{"fr" : 320, "layer" : "command", "type" : "command", "to" : "hide"}
+			
+			]
+		},
+
+		{
+			"name" : "hide",
+			"transition" : [
+			{"fr" : 0, "layer" : "mask_around", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "layer" : "mask_info", "type" : "visible", "to" : 1},
+			{"fr" : 0, "dur" : 7, "layer" : "text_info2", "type" : "clip", "curve": 2, "from" : "0,0,200,37", "to" :"0,0,0,37"},
+			{"fr" : 0, "dur" : 7, "layer" : "mask_info", "type" : "move", "curve": 2, "from" : "1610,918", "to" : "1410,918"},
+			{"fr" : 7, "layer" : "text_info2", "type" : "visible", "to" : 0},
+
+			{"fr" : 7, "dur" : 7, "layer" : "text_info1", "type" : "clip", "curve": 2, "from" : "0,0,750,37", "to" :"0,0,0,37"},
+			{"fr" : 7, "dur" : 7, "layer" : "mask_info", "type" : "move", "curve": 2, "from" : "1435,918", "to" : "685,918"},
+			{"fr" : 14, "layer" : "text_info1", "type" : "visible", "to" : 0},
+			{"fr" : 14, "layer" : "mask_info", "type" : "visible", "to" : 0},
+
+			{"fr" : 15, "layer" : "mask_name", "type" : "visible", "to" : 1},
+			{"fr" : 15, "dur" : 19, "layer" : "mask_name", "type" : "move", "curve": 2, "from" : "1630, 810", "to" : "700, 810"},
+			{"fr" : 15, "dur" : 19, "layer" : "player_name", "type" : "clip", "curve": 2, "from" : "0,0,930,62", "to" :"0,0,0,62"},
+			{"fr" : 34, "layer" : "mask_name", "type" : "visible", "to" : 0},
+			{"fr" : 34, "layer" : "player_name", "type" : "visible", "to" : 0},
+			
+			{"fr" : 3, "dur" : 25, "layer" : "player_photo", "type" : "move", "curve": 2, "from" : "270,689", "to" : "270,989"},
+			{"fr" : 3, "dur" : 25, "layer" : "player_photo", "type" : "clip", "curve": 2, "from" : "0,0,420,300", "to" :"0,0,420,0"},
+			{"fr" : 28, "layer" : "player_photo", "type" : "visible", "to" : 0},
+
+			{"fr" : 19, "dur" : 6, "layer" : "team_logo", "type" : "clip", "curve": 0, "from" : "0,47,295,178", "to" :"0,47,55,178"},
+			{"fr" : 25, "layer" : "team_logo", "type" : "visible", "to" : 0},
+			{"fr" : 19, "layer" : "mask_logo", "type" : "visible", "to" : 1},
+			{"fr" : 19, "dur" : 6, "layer" : "mask_logo", "type" : "move", "curve": 0, "from" : "520, 810", "to" : "280, 810"},
+			{"fr" : 25, "layer" : "mask_logo", "type" : "visible", "to" : 0},
+
+			{"fr" : 5, "dur" : 18, "layer" : "player_number", "type" : "move", "curve": 2, "from" : "563,832", "to" : "685,832"},
+			{"fr" : 5, "dur" : 18, "layer" : "player_number", "type" : "clip", "curve": 2, "from" : "0,0,122,66", "to" :"0,0,0,66"},
+			{"fr" : 23, "layer" : "player_number", "type" : "visible", "to" : 0},
+
+			{"fr" : 10, "layer" : "command", "type" : "script", "to" : "isMaskNumber()"},
+			{"fr" : 10, "dur" : 18, "layer" : "number_bkg", "type" : "move", "curve": 2, "from" : "563,832", "to" : "685,832"},
+			{"fr" : 10, "dur" : 18, "layer" : "number_bkg", "type" : "clip", "curve": 2, "from" : "0,0,122,66", "to" :"0,0,0,66"},
+			{"fr" : 28, "layer" : "mask_number", "type" : "visible", "to" : 0},
+			{"fr" : 28, "layer" : "number_bkg", "type" : "visible", "to" : 0},
+			
+			{"fr" : 11, "dur" : 18, "layer" : "bottom_bkg", "type" : "move", "curve": 2, "from" : "259,917", "to" : "1708,917"},
+			{"fr" : 11, "dur" : 18, "layer" : "bottom_bkg", "type" : "clip", "curve": 2, "from" : "0,0,1449,72", "to" :"0,0,0,72"},
+			{"fr" : 28, "layer" : "bottom_bkg", "type" : "visible", "to" : 0},
+
+			{"fr" : 28, "dur" : 16, "layer" : "main_bkg", "type" : "move", "curve": 2, "from" : "259,810", "to" : "-1190,810"},
+			{"fr" : 28, "dur" : 16, "layer" : "main_bkg", "type" : "clip", "curve": 2, "from" : "0,0,1449,179", "to" :"1449,0,1449,179"},
+			{"fr" : 44, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+			
+			{"fr" : 33, "dur" : 17, "layer" : "curtain_darkgray", "type" : "move", "curve": 2, "from" : "259,810", "to" : "-1190,810"},
+			{"fr" : 33, "dur" : 17, "layer" : "curtain_darkgray", "type" : "clip", "curve": 2, "from" : "0,0,1449,179", "to" :"1449,0,1449,179"},
+			{"fr" : 50, "layer" : "curtain_darkgray", "type" : "visible", "to" : 0},
+			
+			{"fr" : 41, "dur" : 18, "layer" : "curtain_gray", "type" : "move", "curve": 2, "from" : "259,810", "to" : "-1190,810"},
+			{"fr" : 41, "dur" : 18, "layer" : "curtain_gray", "type" : "clip", "curve": 2, "from" : "0,0,1449,179", "to" :"1449,0,1449,179"},
+			{"fr" : 59, "layer" : "curtain_gray", "type" : "visible", "to" : 0},
+			
+			{"fr" : 45, "dur" : 20, "layer" : "curtain_white", "type" : "move", "curve": 2, "from" : "259,810", "to" : "-1190,810"},
+			{"fr" : 45 "dur" : 20, "layer" : "curtain_white", "type" : "clip", "curve": 2, "from" : "0,0,1449,179", "to" :"1449,0,1449,179"},
+			{"fr" : 65, "layer" : "curtain_white", "type" : "visible", "to" : 0},
+
+			{"fr" : 68, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+
+			]
+		},
+	]
+} 

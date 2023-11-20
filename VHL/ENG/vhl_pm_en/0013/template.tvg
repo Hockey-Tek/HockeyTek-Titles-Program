@@ -1,0 +1,252 @@
+﻿{
+	"template" : "0013",
+	"scale" : "1920,1080",
+	"rate" : 50.0,
+	"values" : {
+		"$team-r-logo" : "",
+		"$player-photo" : "",
+		"$player-number" : "",
+		"$penalty-time" : "",
+		"$violation" : "",	
+		"$player-fname" : "",
+		"$player-sname" : "",
+	},
+
+	"script": "function updateValue()
+			{
+				if(template.values('$violation').length > 0)
+				{
+					text_info1.value =  '<span style=\"color:#F8FF13;\">PENALTY: </span><span style=\"color:white; text-transform:uppercase;\">' + template.values('$violation') + '</span>';
+					text_info1.update = 1;
+				}
+				if(template.values('$player-fname').length > 0)
+				{
+					player_name.value = template.values('$player-fname') + ' ' + template.values('$player-sname');
+					player_name.update = 1;
+				}
+				if(template.values('$penalty-time').length > 0)
+				{
+					text_info2.value = template.values('$penalty-time') + ' MIN';
+					text_info2.update = 1;
+				}
+			}
+		function isPlayerNumber()
+		{
+			if(template.values('$player-number') > 0)
+			{
+				player_number.visible = 1;
+				curtian_number.visible = 1;
+				number_bkg.visible = 1;
+			}
+		}",
+
+	"fonts" : [
+		"{path-fonts}Parimatch-Bold.ttf",
+		"{path-fonts}Parimatch-Regular.ttf",
+ 		],
+
+	"layers" : [
+		{
+			"name" : "main_bkg",
+			"type" : "svg",
+			"position" : "335,835",
+			"size" : "1250,155",
+			"path" : "{path}mainbkg.svg",
+		},
+		{
+			"name" : "team_logo",
+			"type" : "image",
+			"position" : "385,842",
+			"size" : "140,140",
+			"path" : "$team-r-logo",
+		},
+		{
+			"name" : "player_photo",
+			"type" : "image",
+			"position" : "365,818",
+			"size" : "363,258",
+			"aspect" : 1,
+			"path" : "$player-photo",
+		},
+		{
+			"name" : "number_bkg",
+			"type" : "svg",
+			"position" : "628,855",
+			"size" : "103,63",
+			"path" : "{path}numberbkg.svg",
+		},
+		{
+			"name" : "player_number",
+			"type" : "text",
+			"position" : "628,855",
+			"size" : "103,63",
+			"value" : "$player-number",
+			"color" : "0,0,0",
+			"align" : "0,0",
+			"font" : "Pari-Match Bold,72"
+		},
+		{
+			"name" : "curtian_number",
+			"type" : "svg",
+			"position" : "628,855",
+			"size" : "103,63",
+			"path" : "{path}numbermask.svg",
+		},
+		{
+			"name" : "player_name",
+			"type" : "text",
+			"position" : "750,855",
+			"size" : "790,63",
+			"value" : "",
+			"color" : "#F8FF13",
+			"align" : "1,0",
+			"case" : 1,
+			"font" : "Pari-Match Bold,72"
+		},
+		{
+			"name" : "text_info1",
+			"type" : "richtext",
+			"position" : "700,936",
+			"size" : "700,36",
+			"value" : "",
+			"color" : "#F8FF13",
+			"align" : "1,0",
+			"font" : "Pari-Match,40"
+		},
+		{
+			"name" : "text_info2",
+			"type" : "text",
+			"position" : "1310,938",
+			"size" : "200,36",
+			"value" : "$penalty-time",
+			"color" : "#FFFFFF",
+			"align" : "2,2",
+			"case" : 1,
+			"font" : "Pari-Match,40"
+		},
+		{
+			"name" : "curtian_white",
+			"type" : "svg",
+			"position" : "335,835",
+			"size" : "1250,155",
+			"path" : "{path}whitebkg.svg",
+		},
+		{
+			"name" : "curtian_yellow",
+			"type" : "svg",
+			"position" : "335,835",
+			"size" : "1250,155",
+			"path" : "{path}yellowbkg.svg",
+		},
+		{
+			"name" : "curtian_gray",
+			"type" : "svg",
+			"position" : "335,835",
+			"size" : "1250,155",
+			"path" : "{path}graybkg.svg",
+		},
+		{
+			"name" : "mask_left",
+			"type" : "mask",
+			"position" : "-20,835",
+			"size" : "400,155",
+			"path" : "{path}leftmask.svg",
+		},
+		{
+			"name" : "mask_right",
+			"type" : "mask",
+			"position" : "1540,835",
+			"size" : "400,155",
+			"path" : "{path}rightmask.svg",
+		},
+	],
+
+	"commands" : [
+		
+		{
+			"name" : "show",
+			"transition" : [
+
+			{"fr" : 0, "layer" : "command", "type" : "script", "to" : "updateValue()"},
+			{"fr" : 0, "layer" : "mask_left", "type" : "visible", "to" : 1},
+			{"fr" : 0, "layer" : "mask_right", "type" : "visible", "to" : 1},
+			{"fr" : 0, "layer" : "curtian_gray", "type" : "visible", "to" : 1},
+			{"fr" : 5, "layer" : "curtian_yellow", "type" : "visible", "to" : 1},
+			{"fr" : 10, "layer" : "curtian_white", "type" : "visible", "to" : 1},
+
+			{"fr" : 18, "layer" : "main_bkg", "type" : "visible", "to" : 1},
+
+			{"fr" : 19, "layer" : "command", "type" : "script", "to" : "isPlayerNumber()"},
+			{"fr" : 19, "layer" : "player_name", "type" : "visible", "to" : 1},
+
+			{"fr" : 19, "layer" : "player_photo", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "team_logo", "type" : "visible", "to" : 1},
+			{"fr" : 19, "layer" : "text_info1", "type" : "visible", "to" : 1},
+			{"fr" : 30, "layer" : "text_info2", "type" : "visible", "to" : 1},
+
+
+			{"fr" : 0, "dur" : 36, "layer" : "curtian_gray", "type" : "move", "curve":6, "from" : "-870,835", "to" : "1540,835"},
+			{"fr" : 5, "dur" : 36, "layer" : "curtian_yellow", "type" : "move", "curve":6, "from" : "-870,835", "to" : "1540,835"},
+			{"fr" : 10, "dur" : 36, "layer" : "curtian_white", "type" : "move", "curve":6, "from" : "-870,835", "to" : "1540,835"},
+
+			{"fr" : 19, "dur" : 27, "layer" : "player_photo", "type" : "clip", "curve":2, "from" : "0,0,363,165", "to" :"0,0,363,258"},
+			{"fr" : 19, "dur" : 27, "layer" : "player_photo", "type" : "move", "curve":2, "from" : "365,820", "to" : "365,726"},
+			{"fr" : 19, "dur" : 27, "layer" : "team_logo", "type" : "move", "curve":2, "from" : "450,842", "to" : "385,842"},
+			{"fr" : 19, "dur" : 27, "layer" : "team_logo", "type" : "opacity", "from" : "0", "to" : "1"},
+
+			{"fr" : 19, "dur" : 28, "layer" : "player_name", "type" : "move", "curve":6, "from" : "705,855", "to" : "750,855"},
+			{"fr" : 19, "dur" : 28, "layer" : "curtian_number", "type" : "move", "curve":6, "from" : "628,855", "to" : "715,855"},
+			{"fr" : 19, "dur" : 28, "layer" : "text_info1", "type" : "move", "curve":6, "from" : "610,936", "to" : "700,936"},
+			{"fr" : 19, "dur" : 28, "layer" : "text_info2", "type" : "move", "curve":6, "from" : "1230,938", "to" : "1310,938"},
+			{"fr" : 30, "dur" : 18, "layer" : "text_info2", "type" : "opacity", "from" : "0", "to" : "1"},
+
+
+			{"fr" : 48, "layer" : "curtian_gray", "type" : "visible", "to" : 0},
+			{"fr" : 48, "layer" : "curtian_yellow", "type" : "visible", "to" : 0},
+			{"fr" : 48, "layer" : "curtian_white", "type" : "visible", "to" : 0},
+
+			{"fr" : 48, "layer" : "command", "type" : "signal", "to" : "end-show"}
+			{"fr" : 300, "layer" : "command", "type" : "command", "to" : "hide"},
+
+			]
+		},
+	
+		{
+			"name" : "hide",
+			"transition" : [
+
+			{"fr" : 0, "layer" : "curtian_gray", "type" : "visible", "to" : 1},
+			{"fr" : 7, "layer" : "curtian_yellow", "type" : "visible", "to" : 1},
+			{"fr" : 14, "layer" : "curtian_white", "type" : "visible", "to" : 1},
+
+			{"fr" : 0, "dur" : 19, "layer" : "player_photo", "type" : "clip", "curve":2, "from" : "", "to" :"0,0,363,165"},
+			{"fr" : 0, "dur" : 19, "layer" : "player_photo", "type" : "move", "curve":2, "from" : "", "to" : "365,820"},
+
+			{"fr" : 0, "dur" : 40, "layer" : "curtian_gray", "type" : "move", "curve":18, "from" : "", "to" : "-870,835"},
+			{"fr" : 7, "dur" : 40, "layer" : "curtian_yellow", "type" : "move", "curve":18, "from" : "", "to" : "-870,835"},
+			{"fr" : 14, "dur" : 40, "layer" : "curtian_white", "type" : "move", "curve":18, "from" : "", "to" : "-870,835"},
+
+
+			{"fr" : 25, "layer" : "main_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "number_bkg", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "player_name", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "player_number", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "player_photo", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "team_logo", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "curtian_number", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "text_info1", "type" : "visible", "to" : 0},
+			{"fr" : 25, "layer" : "text_info2", "type" : "visible", "to" : 0},
+			{"fr" : 54, "layer" : "curtian_gray", "type" : "visible", "to" : 0},
+			{"fr" : 54, "layer" : "curtian_yellow", "type" : "visible", "to" : 0},
+			{"fr" : 54, "layer" : "curtian_white", "type" : "visible", "to" : 0},
+			{"fr" : 54, "layer" : "mask_left", "type" : "visible", "to" : 0},
+			{"fr" : 54, "layer" : "mask_right", "type" : "visible", "to" : 0},
+
+			{"fr" : 54, "layer" : "command", "type" : "signal", "to" : "end-hide"},
+
+			]
+		},
+	
+	]
+} 
+				
