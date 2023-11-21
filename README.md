@@ -1,4 +1,4 @@
-<p align="center"><font size="10">HockeyTek Титры</font><br>
+<p align="center"><font size="5">HockeyTek Титры</font><br>
 	Рабочие версии програмного обеспечения серии HockeyTek Titles</p>
 <p align="center">
   <a href="" rel="noopener">
