@@ -3,6 +3,7 @@
  <img width=600px height=100% src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/814f7d3e-f2cd-4ea5-b753-db238fda411e" alt="HockeyTek Titles"></a>
 </p>
 
+[<p align="right">к оглавлению<br> <p align="left">](/docs/index.md)
 ## Установка программного обеспечения 
 <br>
 Минимальные системные требования для установки ПО, предъявляемые к компьютеру:
@@ -44,3 +45,7 @@ ___
 После успешного запуска программы, Вы увидите окно выбора списка графических пакетов доступных к использованию Проверьте, что аппаратный ключ Guardant остается подключенным в процессе использования программы.
 
 <img width="325" alt="Снимок экрана 2023-11-24 в 17 33 42" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/4bc18022-cda0-47b9-855a-0021c0f18b35">
+
+
+
+[<p align="right">к огловлению<br> <p align="left">](/docs/index.md)
