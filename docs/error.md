@@ -1,5 +1,29 @@
-This is an [example link](http://example.com/ "With a Title").
 
+
+And this will produce a flow chart:
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
+
+Картинки-сноски:
+
+![Картинка][image1]
+![Картинка][image2]
+![Картинка][image3]
+
+[image1]: //placehold.it/200x100
+[image2]: //placehold.it/150x100
+[image3]: //placehold.it/100x100
+
+---
+
+
+This is an [example link](http://example.com/ "With a Title").
 
 
 https://github.github.com/gfm/#blank-line
