@@ -68,8 +68,9 @@ ___
 + запустите утилиту для чтения информации о ключе
 
   > скачайте утилиту для чтения информации о ключе можно [тут](https://github.com/Hockey-Tek/HockeyTek-Tools/blob/soft/Key%20info.zip "Утилита для чтения ID номера")
-+ в открывшемся окне найдите ID ключа и скопируйте его 
-
++ в открывшемся окне найдите ID ключа и скопируйте его
+  
+<img width="598" alt="ID_key" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/0d02e034-cb5c-4c30-9a52-55ad83d32084">
 
 1054954531d)
 
@@ -77,4 +78,5 @@ ___
   <a href="/docs/index.md" rel="noopener">
   к оглавлению
 </p>
+
 
