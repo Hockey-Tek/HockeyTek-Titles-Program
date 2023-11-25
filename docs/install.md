@@ -48,8 +48,9 @@ Guardant - это аппаратный USB ключ защиты, который
 
 <img width="325" alt="Снимок экрана 2023-11-24 в 17 33 42" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/4bc18022-cda0-47b9-855a-0021c0f18b35">
 
-Проверьте, что аппаратный ключ Guardant остается подключенным в процессе использования программы, иначе получите ошибку
+Следите, что бы аппаратный ключ Guardant остается подключенным в процессе использования программы, иначе получите ошибку отсутствия ключа защиты
 
+<img width="305" alt="error_dongl" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/5defc3bd-5ec7-42dd-8ac8-827f7dc4c3b2">
 
 ___
 
@@ -62,3 +63,4 @@ ___
   <a href="/docs/index.md" rel="noopener">
   к оглавлению
 </p>
+
