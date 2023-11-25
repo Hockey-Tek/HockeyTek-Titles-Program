@@ -72,7 +72,9 @@ ___
   
 <img width="598" alt="ID_key" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/0d02e034-cb5c-4c30-9a52-55ad83d32084">
 
-1054954531d)
+    В даном приметре это 1054954531d
+
+
 
 <p align="right">
   <a href="/docs/index.md" rel="noopener">
