@@ -34,7 +34,6 @@ Guardant - это аппаратный USB ключ защиты, который
 
 >Актуальные версии драйверов аппаратного ключа Guardant [загрузить](https://www.guardant.ru/license/?HTTP_REFERER=/support/users/download/675/)
 
-___
 Убедитесь, что ваша система соответствует требованиям программного обеспечения. Установите все необходимые обновления для операционной системы Windows 10
 + Установите драйвера аппаратного ключа Guardant в вашу систему Windows 10
 + Вставьте аппаратный ключ Guardant в доступный USB-порт компьютера
@@ -51,5 +50,7 @@ ___
 <img width="325" alt="Снимок экрана 2023-11-24 в 17 33 42" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/4bc18022-cda0-47b9-855a-0021c0f18b35">
 
 
-
-[<p align="right">к огловлению<br> <p align="left">](/docs/index.md)
+<p align="right">
+  <a href="/docs/index.md" rel="noopener">
+  к оглавлению
+</p>
