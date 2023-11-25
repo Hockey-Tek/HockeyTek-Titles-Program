@@ -57,6 +57,8 @@ ___
 > [!CAUTION]
 > Ошибка отсутствия активного пакета графики
 
+<img width="218" alt="error_gra" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/7acd6350-a84a-4aeb-aee0-acf7541678dc">
+
 Возникает в результате отсутствия лицензии для графического пакета(ов)
 
 <p align="right">
