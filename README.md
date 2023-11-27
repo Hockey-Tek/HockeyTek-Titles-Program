@@ -5,5 +5,5 @@
 </p>
 
 ► [Описание графических пакетов](/Description-packages.md) <br> 
-► [Документация к программе HockeyTek Титры ](/docs/index.md)
+► [Документация к программе HockeyTek Титры ](/docs/index.md)<br> 
 
