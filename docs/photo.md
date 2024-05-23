@@ -12,3 +12,4 @@ image
 <img width="549" alt="пиктораммы" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/a2439f63-7613-43a1-aeb1-0764ba0024fd">
 <img width="2156" alt="цвета-команд" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/b227a5db-f52e-4c14-a8ee-b83ad38ee8e3">
 <img width="268" alt="окно выбора пакетов" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/25b12a83-ceea-4806-b96e-053d6018a73c">
+<img width="788" alt="площадки" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/f111e6b5-789c-4515-b0e5-6071327591de">
