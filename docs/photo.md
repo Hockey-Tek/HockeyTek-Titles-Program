@@ -14,3 +14,4 @@ image
 <img width="268" alt="окно выбора пакетов" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/25b12a83-ceea-4806-b96e-053d6018a73c">
 <img width="788" alt="площадки" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/f111e6b5-789c-4515-b0e5-6071327591de">
 <img width="790" alt="судьи" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/026924a3-4528-45fb-bf6d-1bc4306168cf">
+<img width="796" alt="Комментаторы" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/8af258c6-981d-46b4-8565-9f654f03fdb6">
