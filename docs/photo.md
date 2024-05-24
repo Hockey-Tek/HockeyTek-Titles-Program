@@ -15,3 +15,4 @@ image
 <img width="788" alt="площадки" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/f111e6b5-789c-4515-b0e5-6071327591de">
 <img width="790" alt="судьи" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/026924a3-4528-45fb-bf6d-1bc4306168cf">
 <img width="796" alt="Комментаторы" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/8af258c6-981d-46b4-8565-9f654f03fdb6">
+<img width="782" alt="стадии-чемпионата" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/4b9a48f5-83d2-46e8-9ae4-7c590cf69fc3">
