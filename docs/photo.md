@@ -18,3 +18,4 @@ image
 <img width="782" alt="стадии-чемпионата" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/4b9a48f5-83d2-46e8-9ae4-7c590cf69fc3">
 <img width="651" alt="лиги" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/46381c84-a977-44a3-b241-012599d95a0f">
 <img width="383" alt="страна" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/7bb12999-7ce5-49e2-a17e-fc4fc1896657">
+<img width="448" alt="Обновление-команды" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/1d75ea03-915d-405e-b64f-f4ca621e32a5">
