@@ -22,3 +22,4 @@ image
 <img width="241" alt="тип-штрафа" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/401add36-0081-40fc-9284-306252105b1b">
 <img width="777" alt="вкладка штрафов" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/7734a035-d5b3-40dd-b718-c72961644ca1">
 <img width="269" alt="Нарукшение" src="https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/2e5fedf1-7cfd-4779-9aa5-66a2bb9e6663">
+![нарушения-разметка](https://github.com/Hockey-Tek/HockeyTek-Titles/assets/121510444/596bd0fe-b640-475c-85a5-63a7b908749c)
